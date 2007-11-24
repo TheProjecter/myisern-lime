@@ -10,7 +10,7 @@ This page will tell you how to install the myisern system on your computer. The 
 
 Requirements:
 
-You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & Php Pear. Pear is the PHP Extension and Application Repository. 
+You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & Php Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl  packages.
 
 Install symfony.
 
@@ -19,6 +19,4 @@ You must install the symfony pear package on your system. This is documented on 
 The Symfony websites includes on this page http://trac.symfony-project.com/ a description of how to install on Windows and Mac. Please make comments on this page as to your experience.
 
 Setting up apache without virtual hosting:
-
-
 
