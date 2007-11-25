@@ -1,0 +1,35 @@
+propel:
+  isern_organizations:
+    _attributes: { phpName: Organization }
+    id:
+    organization_type_id:        
+    name:                     varchar(255)
+    country:                  varchar(100)
+    home_page:                varchar(255)
+    research_keywords:        varchar(255)
+    research_description:     longvarchar
+    created_at:
+  isern_researchers:
+    _attributes: { phpName: Researcher }
+    id:
+    organization_id: 
+    name:                    varchar(255)
+    email:                   varchar(255)
+    picture_link:            varchar(255)
+    bio_statement:           longvarchar
+    created_at:
+  isern_collaborations:
+    _attributes: { phpName: Collaboration }
+    id:
+    name:                     varchar(255)
+    description:              longvarchar
+  isern_collaboration_years:
+    _attributes: { phpName: CollaborationYear }
+    id:
+    collaboration_id:
+    year:        integer
+  isern_organization_types:
+    _attributes: { phpName: OrganizationType }
+    id:
+    name:       varchar(255)
+  
