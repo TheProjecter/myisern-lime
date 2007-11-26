@@ -3,6 +3,11 @@ prod:
   level:   err
   rotate:  on
   purge:   off
+dev:
+#  enabled: on
+#  level:   debug
+
+test:
 
 #all:
 #  enabled: on

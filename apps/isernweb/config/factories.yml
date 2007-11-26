@@ -9,6 +9,11 @@ cli:
 test:
   storage:
     class: sfSessionTestStorage
+all:
+  storage:
+    class: sfSessionStorage
+    param:
+      session_name: isernweb_symfony
 
 #all:
 #  controller:

@@ -16,8 +16,8 @@
 
                         <li><? echo link_to('Researchers', 'researcher/list') ?> </li>
                         <li><? echo link_to('Organizations', 'organization/list') ?> </li>
-                        <li><a href="collaborations.jsp">Collaborations</a></li>
-                        <li><stripes:link href="Logout.action" event="logout">Logout</stripes:link></li>                        
+                        <li><? echo link_to('Collaborations', 'collaboration/list') ?></li>
+                        <li><? echo link_to('Logout', 'user/logout') ?></li>                        
                 </ul>
 </div>
 
