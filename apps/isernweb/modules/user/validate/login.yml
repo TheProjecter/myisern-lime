@@ -1,0 +1,19 @@
+methods:
+  post:           [login, password]
+  
+fillin:
+  enabled:       on
+
+names:
+  login:
+    required:     Yes
+    required_msg: The login field cannot be left blank
+    validators:   [userValidator]
+  password:
+    required:     Yes
+    required_msg: The password field cannot be left blank
+userValidator:
+    class:         myLoginValidator
+    param:
+      password:    password
+      login_error: This account does not exist or you entered a wrong password
