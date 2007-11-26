@@ -1,35 +1,129 @@
-propel:
-  isern_organizations:
-    _attributes: { phpName: Organization }
-    id:
-    organization_type_id:        
-    name:                     varchar(255)
-    country:                  varchar(100)
-    home_page:                varchar(255)
-    research_keywords:        varchar(255)
-    research_description:     longvarchar
-    created_at:
-  isern_researchers:
-    _attributes: { phpName: Researcher }
-    id:
+---
+propel: 
+  isern_collaborating_organizations: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    collaboration_id: 
+      type: INTEGER
     organization_id: 
-    name:                    varchar(255)
-    email:                   varchar(255)
-    picture_link:            varchar(255)
-    bio_statement:           longvarchar
-    created_at:
-  isern_collaborations:
-    _attributes: { phpName: Collaboration }
-    id:
-    name:                     varchar(255)
-    description:              longvarchar
-  isern_collaboration_years:
-    _attributes: { phpName: CollaborationYear }
-    id:
-    collaboration_id:
-    year:        integer
-  isern_organization_types:
-    _attributes: { phpName: OrganizationType }
-    id:
-    name:       varchar(255)
-  
+      type: INTEGER
+    _indexes: 
+      isern_collaborating_organizations_FI_1: 
+        - collaboration_id
+      isern_collaborating_organizations_FI_2: 
+        - organization_id
+  isern_collaboration_years: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    collaboration_id: 
+      type: INTEGER
+    year: 
+      type: INTEGER
+    _indexes: 
+      isern_collaboration_years_FI_1: 
+        - collaboration_id
+  isern_collaborations: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+  isern_organization_types: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 255
+  isern_organizations: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    organization_type_id: 
+      type: INTEGER
+    name: 
+      type: VARCHAR
+      size: 255
+    country: 
+      type: VARCHAR
+      size: 100
+    home_page: 
+      type: VARCHAR
+      size: 255
+    research_keywords: 
+      type: VARCHAR
+      size: 255
+    research_description: 
+      type: LONGVARCHAR
+    created_at: 
+      type: TIMESTAMP
+    _indexes: 
+      isern_organizations_FI_1: 
+        - organization_type_id
+  isern_researchers: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    organization_id: 
+      type: INTEGER
+    name: 
+      type: VARCHAR
+      size: 255
+    email: 
+      type: VARCHAR
+      size: 255
+    picture_link: 
+      type: VARCHAR
+      size: 255
+    bio_statement: 
+      type: LONGVARCHAR
+    created_at: 
+      type: TIMESTAMP
+    _indexes: 
+      isern_researchers_FI_1: 
+        - organization_id
+  isern_users: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    login: 
+      type: VARCHAR
+      size: 50
+    password: 
+      type: VARCHAR
+      size: 50
+    created_at: 
+      type: TIMESTAMP

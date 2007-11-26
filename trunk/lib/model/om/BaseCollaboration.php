@@ -26,6 +26,12 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 	protected $lastCollaborationYearCriteria = null;
 
 	
+	protected $collCollaboratingOrganizations;
+
+	
+	protected $lastCollaboratingOrganizationCriteria = null;
+
+	
 	protected $alreadyInSave = false;
 
 	
@@ -185,6 +191,14 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 				}
 			}
 
+			if ($this->collCollaboratingOrganizations !== null) {
+				foreach($this->collCollaboratingOrganizations as $referrerFK) {
+					if (!$referrerFK->isDeleted()) {
+						$affectedRows += $referrerFK->save($con);
+					}
+				}
+			}
+
 			$this->alreadyInSave = false;
 		}
 		return $affectedRows;
@@ -228,6 +242,14 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 
 				if ($this->collCollaborationYears !== null) {
 					foreach($this->collCollaborationYears as $referrerFK) {
+						if (!$referrerFK->validate($columns)) {
+							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+						}
+					}
+				}
+
+				if ($this->collCollaboratingOrganizations !== null) {
+					foreach($this->collCollaboratingOrganizations as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
@@ -360,6 +382,10 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 				$copyObj->addCollaborationYear($relObj->copy($deepCopy));
 			}
 
+			foreach($this->getCollaboratingOrganizations() as $relObj) {
+				$copyObj->addCollaboratingOrganization($relObj->copy($deepCopy));
+			}
+
 		} 
 
 		$copyObj->setNew(true);
@@ -453,6 +479,111 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 	{
 		$this->collCollaborationYears[] = $l;
 		$l->setCollaboration($this);
+	}
+
+	
+	public function initCollaboratingOrganizations()
+	{
+		if ($this->collCollaboratingOrganizations === null) {
+			$this->collCollaboratingOrganizations = array();
+		}
+	}
+
+	
+	public function getCollaboratingOrganizations($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaboratingOrganizationPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collCollaboratingOrganizations === null) {
+			if ($this->isNew()) {
+			   $this->collCollaboratingOrganizations = array();
+			} else {
+
+				$criteria->add(CollaboratingOrganizationPeer::COLLABORATION_ID, $this->getId());
+
+				CollaboratingOrganizationPeer::addSelectColumns($criteria);
+				$this->collCollaboratingOrganizations = CollaboratingOrganizationPeer::doSelect($criteria, $con);
+			}
+		} else {
+						if (!$this->isNew()) {
+												
+
+				$criteria->add(CollaboratingOrganizationPeer::COLLABORATION_ID, $this->getId());
+
+				CollaboratingOrganizationPeer::addSelectColumns($criteria);
+				if (!isset($this->lastCollaboratingOrganizationCriteria) || !$this->lastCollaboratingOrganizationCriteria->equals($criteria)) {
+					$this->collCollaboratingOrganizations = CollaboratingOrganizationPeer::doSelect($criteria, $con);
+				}
+			}
+		}
+		$this->lastCollaboratingOrganizationCriteria = $criteria;
+		return $this->collCollaboratingOrganizations;
+	}
+
+	
+	public function countCollaboratingOrganizations($criteria = null, $distinct = false, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaboratingOrganizationPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		$criteria->add(CollaboratingOrganizationPeer::COLLABORATION_ID, $this->getId());
+
+		return CollaboratingOrganizationPeer::doCount($criteria, $distinct, $con);
+	}
+
+	
+	public function addCollaboratingOrganization(CollaboratingOrganization $l)
+	{
+		$this->collCollaboratingOrganizations[] = $l;
+		$l->setCollaboration($this);
+	}
+
+
+	
+	public function getCollaboratingOrganizationsJoinOrganization($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaboratingOrganizationPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collCollaboratingOrganizations === null) {
+			if ($this->isNew()) {
+				$this->collCollaboratingOrganizations = array();
+			} else {
+
+				$criteria->add(CollaboratingOrganizationPeer::COLLABORATION_ID, $this->getId());
+
+				$this->collCollaboratingOrganizations = CollaboratingOrganizationPeer::doSelectJoinOrganization($criteria, $con);
+			}
+		} else {
+									
+			$criteria->add(CollaboratingOrganizationPeer::COLLABORATION_ID, $this->getId());
+
+			if (!isset($this->lastCollaboratingOrganizationCriteria) || !$this->lastCollaboratingOrganizationCriteria->equals($criteria)) {
+				$this->collCollaboratingOrganizations = CollaboratingOrganizationPeer::doSelectJoinOrganization($criteria, $con);
+			}
+		}
+		$this->lastCollaboratingOrganizationCriteria = $criteria;
+
+		return $this->collCollaboratingOrganizations;
 	}
 
 } 
