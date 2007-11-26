@@ -1,0 +1,13 @@
+methods:
+  post:           [login, password]
+  
+fillin:
+  enabled:       on
+
+names:
+  login:
+    required:     Yes
+    required_msg: The login field cannot be left blank
+  password:
+    required:     Yes
+    required_msg: The login field cannot be left blank
