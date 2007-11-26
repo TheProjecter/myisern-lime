@@ -1,0 +1,8 @@
+read:
+  is_secure:   on       # All users can request the read action
+update:
+  is_secure:   on        # The update action is only for authenticated users
+delete:
+  is_secure:   on        # Only for authenticated users
+all:
+  is_secure:  on        # off is the default value anyway
