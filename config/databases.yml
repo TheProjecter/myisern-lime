@@ -3,3 +3,8 @@ all:
     class:          sfPropelDatabase
     param:
       dsn:          mysql://isern:johnson@localhost/isern_development
+test:
+  propel:
+    class:      sfPropelDatabase
+    param:
+      dsn:          mysql://isern:johnson@localhost/isern_test
