@@ -135,7 +135,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
@@ -149,7 +151,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setOrganizationTypeId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
@@ -167,7 +171,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setName($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
@@ -181,7 +187,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setCountry($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
@@ -195,7 +203,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setHomePage($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
@@ -209,7 +219,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setResearchKeywords($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
@@ -223,7 +235,9 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	public function setResearchDescription($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
@@ -667,9 +681,8 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	
 	public function getOrganizationType($con = null)
 	{
-				include_once 'lib/model/om/BaseOrganizationTypePeer.php';
-
 		if ($this->aOrganizationType === null && ($this->organization_type_id !== null)) {
+						include_once 'lib/model/om/BaseOrganizationTypePeer.php';
 
 			$this->aOrganizationType = OrganizationTypePeer::retrieveByPK($this->organization_type_id, $con);
 

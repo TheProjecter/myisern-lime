@@ -19,10 +19,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	
 	protected $password;
 
-
-	
-	protected $created_at;
-
 	
 	protected $alreadyInSave = false;
 
@@ -51,32 +47,12 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	}
 
 	
-	public function getCreatedAt($format = 'Y-m-d H:i:s')
-	{
-
-		if ($this->created_at === null || $this->created_at === '') {
-			return null;
-		} elseif (!is_int($this->created_at)) {
-						$ts = strtotime($this->created_at);
-			if ($ts === -1 || $ts === false) { 				throw new PropelException("Unable to parse value of [created_at] as date/time value: " . var_export($this->created_at, true));
-			}
-		} else {
-			$ts = $this->created_at;
-		}
-		if ($format === null) {
-			return $ts;
-		} elseif (strpos($format, '%') !== false) {
-			return strftime($format, $ts);
-		} else {
-			return date($format, $ts);
-		}
-	}
-
-	
 	public function setId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
@@ -90,7 +66,9 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	public function setLogin($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
@@ -104,30 +82,15 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	public function setPassword($v)
 	{
 
-						if ($v !== null && !is_string($v)) {
+		
+		
+		if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
 		if ($this->password !== $v) {
 			$this->password = $v;
 			$this->modifiedColumns[] = UserPeer::PASSWORD;
-		}
-
-	} 
-	
-	public function setCreatedAt($v)
-	{
-
-		if ($v !== null && !is_int($v)) {
-			$ts = strtotime($v);
-			if ($ts === -1 || $ts === false) { 				throw new PropelException("Unable to parse date/time value for [created_at] from input: " . var_export($v, true));
-			}
-		} else {
-			$ts = $v;
-		}
-		if ($this->created_at !== $ts) {
-			$this->created_at = $ts;
-			$this->modifiedColumns[] = UserPeer::CREATED_AT;
 		}
 
 	} 
@@ -142,13 +105,11 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 			$this->password = $rs->getString($startcol + 2);
 
-			$this->created_at = $rs->getTimestamp($startcol + 3, null);
-
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 4; 
+						return $startcol + 3; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating User object", $e);
 		}
@@ -179,11 +140,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	
 	public function save($con = null)
 	{
-    if ($this->isNew() && !$this->isColumnModified(UserPeer::CREATED_AT))
-    {
-      $this->setCreatedAt(time());
-    }
-
 		if ($this->isDeleted()) {
 			throw new PropelException("You cannot save an object that has been deleted.");
 		}
@@ -289,9 +245,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			case 2:
 				return $this->getPassword();
 				break;
-			case 3:
-				return $this->getCreatedAt();
-				break;
 			default:
 				return null;
 				break;
@@ -305,7 +258,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			$keys[0] => $this->getId(),
 			$keys[1] => $this->getLogin(),
 			$keys[2] => $this->getPassword(),
-			$keys[3] => $this->getCreatedAt(),
 		);
 		return $result;
 	}
@@ -330,9 +282,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			case 2:
 				$this->setPassword($value);
 				break;
-			case 3:
-				$this->setCreatedAt($value);
-				break;
 		} 	}
 
 	
@@ -343,7 +292,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
 		if (array_key_exists($keys[1], $arr)) $this->setLogin($arr[$keys[1]]);
 		if (array_key_exists($keys[2], $arr)) $this->setPassword($arr[$keys[2]]);
-		if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
 	}
 
 	
@@ -354,7 +302,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(UserPeer::ID)) $criteria->add(UserPeer::ID, $this->id);
 		if ($this->isColumnModified(UserPeer::LOGIN)) $criteria->add(UserPeer::LOGIN, $this->login);
 		if ($this->isColumnModified(UserPeer::PASSWORD)) $criteria->add(UserPeer::PASSWORD, $this->password);
-		if ($this->isColumnModified(UserPeer::CREATED_AT)) $criteria->add(UserPeer::CREATED_AT, $this->created_at);
 
 		return $criteria;
 	}
@@ -388,8 +335,6 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		$copyObj->setLogin($this->login);
 
 		$copyObj->setPassword($this->password);
-
-		$copyObj->setCreatedAt($this->created_at);
 
 
 		$copyObj->setNew(true);

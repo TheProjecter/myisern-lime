@@ -1,7 +1,7 @@
 <?php
 
 
-abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
+abstract class BaseCollaborations extends BaseObject  implements Persistent {
 
 
 	
@@ -13,14 +13,11 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 
 
 	
-	protected $collaboration_id;
+	protected $name;
 
 
 	
-	protected $year;
-
-	
-	protected $aCollaboration;
+	protected $description;
 
 	
 	protected $alreadyInSave = false;
@@ -36,17 +33,17 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	}
 
 	
-	public function getCollaborationId()
+	public function getName()
 	{
 
-		return $this->collaboration_id;
+		return $this->name;
 	}
 
 	
-	public function getYear()
+	public function getDescription()
 	{
 
-		return $this->year;
+		return $this->description;
 	}
 
 	
@@ -61,43 +58,39 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 
 		if ($this->id !== $v) {
 			$this->id = $v;
-			$this->modifiedColumns[] = CollaborationYearPeer::ID;
+			$this->modifiedColumns[] = CollaborationsPeer::ID;
 		}
 
 	} 
 	
-	public function setCollaborationId($v)
+	public function setName($v)
 	{
 
 		
 		
-		if ($v !== null && !is_int($v) && is_numeric($v)) {
-			$v = (int) $v;
+		if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
 		}
 
-		if ($this->collaboration_id !== $v) {
-			$this->collaboration_id = $v;
-			$this->modifiedColumns[] = CollaborationYearPeer::COLLABORATION_ID;
-		}
-
-		if ($this->aCollaboration !== null && $this->aCollaboration->getId() !== $v) {
-			$this->aCollaboration = null;
+		if ($this->name !== $v) {
+			$this->name = $v;
+			$this->modifiedColumns[] = CollaborationsPeer::NAME;
 		}
 
 	} 
 	
-	public function setYear($v)
+	public function setDescription($v)
 	{
 
 		
 		
-		if ($v !== null && !is_int($v) && is_numeric($v)) {
-			$v = (int) $v;
+		if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
 		}
 
-		if ($this->year !== $v) {
-			$this->year = $v;
-			$this->modifiedColumns[] = CollaborationYearPeer::YEAR;
+		if ($this->description !== $v) {
+			$this->description = $v;
+			$this->modifiedColumns[] = CollaborationsPeer::DESCRIPTION;
 		}
 
 	} 
@@ -108,9 +101,9 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 
 			$this->id = $rs->getInt($startcol + 0);
 
-			$this->collaboration_id = $rs->getInt($startcol + 1);
+			$this->name = $rs->getString($startcol + 1);
 
-			$this->year = $rs->getInt($startcol + 2);
+			$this->description = $rs->getString($startcol + 2);
 
 			$this->resetModified();
 
@@ -118,7 +111,7 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 
 						return $startcol + 3; 
 		} catch (Exception $e) {
-			throw new PropelException("Error populating CollaborationYear object", $e);
+			throw new PropelException("Error populating Collaborations object", $e);
 		}
 	}
 
@@ -130,12 +123,12 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(CollaborationYearPeer::DATABASE_NAME);
+			$con = Propel::getConnection(CollaborationsPeer::DATABASE_NAME);
 		}
 
 		try {
 			$con->begin();
-			CollaborationYearPeer::doDelete($this, $con);
+			CollaborationsPeer::doDelete($this, $con);
 			$this->setDeleted(true);
 			$con->commit();
 		} catch (PropelException $e) {
@@ -152,7 +145,7 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(CollaborationYearPeer::DATABASE_NAME);
+			$con = Propel::getConnection(CollaborationsPeer::DATABASE_NAME);
 		}
 
 		try {
@@ -173,23 +166,14 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 			$this->alreadyInSave = true;
 
 
-												
-			if ($this->aCollaboration !== null) {
-				if ($this->aCollaboration->isModified()) {
-					$affectedRows += $this->aCollaboration->save($con);
-				}
-				$this->setCollaboration($this->aCollaboration);
-			}
-
-
 						if ($this->isModified()) {
 				if ($this->isNew()) {
-					$pk = CollaborationYearPeer::doInsert($this, $con);
+					$pk = CollaborationsPeer::doInsert($this, $con);
 					$affectedRows += 1; 										 										 
 					$this->setId($pk);  
 					$this->setNew(false);
 				} else {
-					$affectedRows += CollaborationYearPeer::doUpdate($this, $con);
+					$affectedRows += CollaborationsPeer::doUpdate($this, $con);
 				}
 				$this->resetModified(); 			}
 
@@ -229,15 +213,7 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 			$failureMap = array();
 
 
-												
-			if ($this->aCollaboration !== null) {
-				if (!$this->aCollaboration->validate($columns)) {
-					$failureMap = array_merge($failureMap, $this->aCollaboration->getValidationFailures());
-				}
-			}
-
-
-			if (($retval = CollaborationYearPeer::doValidate($this, $columns)) !== true) {
+			if (($retval = CollaborationsPeer::doValidate($this, $columns)) !== true) {
 				$failureMap = array_merge($failureMap, $retval);
 			}
 
@@ -252,7 +228,7 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	
 	public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = CollaborationYearPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = CollaborationsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		return $this->getByPosition($pos);
 	}
 
@@ -264,10 +240,10 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 				return $this->getId();
 				break;
 			case 1:
-				return $this->getCollaborationId();
+				return $this->getName();
 				break;
 			case 2:
-				return $this->getYear();
+				return $this->getDescription();
 				break;
 			default:
 				return null;
@@ -277,11 +253,11 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	
 	public function toArray($keyType = BasePeer::TYPE_PHPNAME)
 	{
-		$keys = CollaborationYearPeer::getFieldNames($keyType);
+		$keys = CollaborationsPeer::getFieldNames($keyType);
 		$result = array(
 			$keys[0] => $this->getId(),
-			$keys[1] => $this->getCollaborationId(),
-			$keys[2] => $this->getYear(),
+			$keys[1] => $this->getName(),
+			$keys[2] => $this->getDescription(),
 		);
 		return $result;
 	}
@@ -289,7 +265,7 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	
 	public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = CollaborationYearPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = CollaborationsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		return $this->setByPosition($pos, $value);
 	}
 
@@ -301,31 +277,31 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 				$this->setId($value);
 				break;
 			case 1:
-				$this->setCollaborationId($value);
+				$this->setName($value);
 				break;
 			case 2:
-				$this->setYear($value);
+				$this->setDescription($value);
 				break;
 		} 	}
 
 	
 	public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
 	{
-		$keys = CollaborationYearPeer::getFieldNames($keyType);
+		$keys = CollaborationsPeer::getFieldNames($keyType);
 
 		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-		if (array_key_exists($keys[1], $arr)) $this->setCollaborationId($arr[$keys[1]]);
-		if (array_key_exists($keys[2], $arr)) $this->setYear($arr[$keys[2]]);
+		if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
+		if (array_key_exists($keys[2], $arr)) $this->setDescription($arr[$keys[2]]);
 	}
 
 	
 	public function buildCriteria()
 	{
-		$criteria = new Criteria(CollaborationYearPeer::DATABASE_NAME);
+		$criteria = new Criteria(CollaborationsPeer::DATABASE_NAME);
 
-		if ($this->isColumnModified(CollaborationYearPeer::ID)) $criteria->add(CollaborationYearPeer::ID, $this->id);
-		if ($this->isColumnModified(CollaborationYearPeer::COLLABORATION_ID)) $criteria->add(CollaborationYearPeer::COLLABORATION_ID, $this->collaboration_id);
-		if ($this->isColumnModified(CollaborationYearPeer::YEAR)) $criteria->add(CollaborationYearPeer::YEAR, $this->year);
+		if ($this->isColumnModified(CollaborationsPeer::ID)) $criteria->add(CollaborationsPeer::ID, $this->id);
+		if ($this->isColumnModified(CollaborationsPeer::NAME)) $criteria->add(CollaborationsPeer::NAME, $this->name);
+		if ($this->isColumnModified(CollaborationsPeer::DESCRIPTION)) $criteria->add(CollaborationsPeer::DESCRIPTION, $this->description);
 
 		return $criteria;
 	}
@@ -333,9 +309,9 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	
 	public function buildPkeyCriteria()
 	{
-		$criteria = new Criteria(CollaborationYearPeer::DATABASE_NAME);
+		$criteria = new Criteria(CollaborationsPeer::DATABASE_NAME);
 
-		$criteria->add(CollaborationYearPeer::ID, $this->id);
+		$criteria->add(CollaborationsPeer::ID, $this->id);
 
 		return $criteria;
 	}
@@ -356,9 +332,9 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	public function copyInto($copyObj, $deepCopy = false)
 	{
 
-		$copyObj->setCollaborationId($this->collaboration_id);
+		$copyObj->setName($this->name);
 
-		$copyObj->setYear($this->year);
+		$copyObj->setDescription($this->description);
 
 
 		$copyObj->setNew(true);
@@ -379,38 +355,9 @@ abstract class BaseCollaborationYear extends BaseObject  implements Persistent {
 	public function getPeer()
 	{
 		if (self::$peer === null) {
-			self::$peer = new CollaborationYearPeer();
+			self::$peer = new CollaborationsPeer();
 		}
 		return self::$peer;
-	}
-
-	
-	public function setCollaboration($v)
-	{
-
-
-		if ($v === null) {
-			$this->setCollaborationId(NULL);
-		} else {
-			$this->setCollaborationId($v->getId());
-		}
-
-
-		$this->aCollaboration = $v;
-	}
-
-
-	
-	public function getCollaboration($con = null)
-	{
-		if ($this->aCollaboration === null && ($this->collaboration_id !== null)) {
-						include_once 'lib/model/om/BaseCollaborationPeer.php';
-
-			$this->aCollaboration = CollaborationPeer::retrieveByPK($this->collaboration_id, $con);
-
-			
-		}
-		return $this->aCollaboration;
 	}
 
 } 

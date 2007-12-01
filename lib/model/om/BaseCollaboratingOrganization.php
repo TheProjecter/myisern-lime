@@ -56,7 +56,9 @@ abstract class BaseCollaboratingOrganization extends BaseObject  implements Pers
 	public function setId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
@@ -70,7 +72,9 @@ abstract class BaseCollaboratingOrganization extends BaseObject  implements Pers
 	public function setCollaborationId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
@@ -88,7 +92,9 @@ abstract class BaseCollaboratingOrganization extends BaseObject  implements Pers
 	public function setOrganizationId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
@@ -417,9 +423,8 @@ abstract class BaseCollaboratingOrganization extends BaseObject  implements Pers
 	
 	public function getCollaboration($con = null)
 	{
-				include_once 'lib/model/om/BaseCollaborationPeer.php';
-
 		if ($this->aCollaboration === null && ($this->collaboration_id !== null)) {
+						include_once 'lib/model/om/BaseCollaborationPeer.php';
 
 			$this->aCollaboration = CollaborationPeer::retrieveByPK($this->collaboration_id, $con);
 
@@ -447,9 +452,8 @@ abstract class BaseCollaboratingOrganization extends BaseObject  implements Pers
 	
 	public function getOrganization($con = null)
 	{
-				include_once 'lib/model/om/BaseOrganizationPeer.php';
-
 		if ($this->aOrganization === null && ($this->organization_id !== null)) {
+						include_once 'lib/model/om/BaseOrganizationPeer.php';
 
 			$this->aOrganization = OrganizationPeer::retrieveByPK($this->organization_id, $con);
 
