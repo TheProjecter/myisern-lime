@@ -1,16 +1,16 @@
 <?php
 
 
-abstract class BaseUserPeer {
+abstract class BaseCollaborationsPeer {
 
 	
 	const DATABASE_NAME = 'propel';
 
 	
-	const TABLE_NAME = 'isern_users';
+	const TABLE_NAME = 'isern_collaborations';
 
 	
-	const CLASS_DEFAULT = 'lib.model.User';
+	const CLASS_DEFAULT = 'lib.model.Collaborations';
 
 	
 	const NUM_COLUMNS = 3;
@@ -20,13 +20,13 @@ abstract class BaseUserPeer {
 
 
 	
-	const ID = 'isern_users.ID';
+	const ID = 'isern_collaborations.ID';
 
 	
-	const LOGIN = 'isern_users.LOGIN';
+	const NAME = 'isern_collaborations.NAME';
 
 	
-	const PASSWORD = 'isern_users.PASSWORD';
+	const DESCRIPTION = 'isern_collaborations.DESCRIPTION';
 
 	
 	private static $phpNameMap = null;
@@ -34,31 +34,31 @@ abstract class BaseUserPeer {
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Id', 'Login', 'Password', ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::ID, UserPeer::LOGIN, UserPeer::PASSWORD, ),
-		BasePeer::TYPE_FIELDNAME => array ('id', 'login', 'password', ),
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Description', ),
+		BasePeer::TYPE_COLNAME => array (CollaborationsPeer::ID, CollaborationsPeer::NAME, CollaborationsPeer::DESCRIPTION, ),
+		BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'description', ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, )
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Login' => 1, 'Password' => 2, ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::ID => 0, UserPeer::LOGIN => 1, UserPeer::PASSWORD => 2, ),
-		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'login' => 1, 'password' => 2, ),
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Description' => 2, ),
+		BasePeer::TYPE_COLNAME => array (CollaborationsPeer::ID => 0, CollaborationsPeer::NAME => 1, CollaborationsPeer::DESCRIPTION => 2, ),
+		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'description' => 2, ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, )
 	);
 
 	
 	public static function getMapBuilder()
 	{
-		include_once 'lib/model/map/UserMapBuilder.php';
-		return BasePeer::getMapBuilder('lib.model.map.UserMapBuilder');
+		include_once 'lib/model/map/CollaborationsMapBuilder.php';
+		return BasePeer::getMapBuilder('lib.model.map.CollaborationsMapBuilder');
 	}
 	
 	public static function getPhpNameMap()
 	{
 		if (self::$phpNameMap === null) {
-			$map = UserPeer::getTableMap();
+			$map = CollaborationsPeer::getTableMap();
 			$columns = $map->getColumns();
 			$nameMap = array();
 			foreach ($columns as $column) {
@@ -92,23 +92,23 @@ abstract class BaseUserPeer {
 	
 	public static function alias($alias, $column)
 	{
-		return str_replace(UserPeer::TABLE_NAME.'.', $alias.'.', $column);
+		return str_replace(CollaborationsPeer::TABLE_NAME.'.', $alias.'.', $column);
 	}
 
 	
 	public static function addSelectColumns(Criteria $criteria)
 	{
 
-		$criteria->addSelectColumn(UserPeer::ID);
+		$criteria->addSelectColumn(CollaborationsPeer::ID);
 
-		$criteria->addSelectColumn(UserPeer::LOGIN);
+		$criteria->addSelectColumn(CollaborationsPeer::NAME);
 
-		$criteria->addSelectColumn(UserPeer::PASSWORD);
+		$criteria->addSelectColumn(CollaborationsPeer::DESCRIPTION);
 
 	}
 
-	const COUNT = 'COUNT(isern_users.ID)';
-	const COUNT_DISTINCT = 'COUNT(DISTINCT isern_users.ID)';
+	const COUNT = 'COUNT(isern_collaborations.ID)';
+	const COUNT_DISTINCT = 'COUNT(DISTINCT isern_collaborations.ID)';
 
 	
 	public static function doCount(Criteria $criteria, $distinct = false, $con = null)
@@ -117,9 +117,9 @@ abstract class BaseUserPeer {
 
 				$criteria->clearSelectColumns()->clearOrderByColumns();
 		if ($distinct || in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
-			$criteria->addSelectColumn(UserPeer::COUNT_DISTINCT);
+			$criteria->addSelectColumn(CollaborationsPeer::COUNT_DISTINCT);
 		} else {
-			$criteria->addSelectColumn(UserPeer::COUNT);
+			$criteria->addSelectColumn(CollaborationsPeer::COUNT);
 		}
 
 				foreach($criteria->getGroupByColumns() as $column)
@@ -127,7 +127,7 @@ abstract class BaseUserPeer {
 			$criteria->addSelectColumn($column);
 		}
 
-		$rs = UserPeer::doSelectRS($criteria, $con);
+		$rs = CollaborationsPeer::doSelectRS($criteria, $con);
 		if ($rs->next()) {
 			return $rs->getInt(1);
 		} else {
@@ -139,7 +139,7 @@ abstract class BaseUserPeer {
 	{
 		$critcopy = clone $criteria;
 		$critcopy->setLimit(1);
-		$objects = UserPeer::doSelect($critcopy, $con);
+		$objects = CollaborationsPeer::doSelect($critcopy, $con);
 		if ($objects) {
 			return $objects[0];
 		}
@@ -148,7 +148,7 @@ abstract class BaseUserPeer {
 	
 	public static function doSelect(Criteria $criteria, $con = null)
 	{
-		return UserPeer::populateObjects(UserPeer::doSelectRS($criteria, $con));
+		return CollaborationsPeer::populateObjects(CollaborationsPeer::doSelectRS($criteria, $con));
 	}
 	
 	public static function doSelectRS(Criteria $criteria, $con = null)
@@ -159,7 +159,7 @@ abstract class BaseUserPeer {
 
 		if (!$criteria->getSelectColumns()) {
 			$criteria = clone $criteria;
-			UserPeer::addSelectColumns($criteria);
+			CollaborationsPeer::addSelectColumns($criteria);
 		}
 
 				$criteria->setDbName(self::DATABASE_NAME);
@@ -171,7 +171,7 @@ abstract class BaseUserPeer {
 	{
 		$results = array();
 	
-				$cls = UserPeer::getOMClass();
+				$cls = CollaborationsPeer::getOMClass();
 		$cls = Propel::import($cls);
 				while($rs->next()) {
 		
@@ -191,7 +191,7 @@ abstract class BaseUserPeer {
 	
 	public static function getOMClass()
 	{
-		return UserPeer::CLASS_DEFAULT;
+		return CollaborationsPeer::CLASS_DEFAULT;
 	}
 
 	
@@ -205,7 +205,7 @@ abstract class BaseUserPeer {
 			$criteria = clone $values; 		} else {
 			$criteria = $values->buildCriteria(); 		}
 
-		$criteria->remove(UserPeer::ID); 
+		$criteria->remove(CollaborationsPeer::ID); 
 
 				$criteria->setDbName(self::DATABASE_NAME);
 
@@ -232,8 +232,8 @@ abstract class BaseUserPeer {
 
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; 
-			$comparison = $criteria->getComparison(UserPeer::ID);
-			$selectCriteria->add(UserPeer::ID, $criteria->remove(UserPeer::ID), $comparison);
+			$comparison = $criteria->getComparison(CollaborationsPeer::ID);
+			$selectCriteria->add(CollaborationsPeer::ID, $criteria->remove(CollaborationsPeer::ID), $comparison);
 
 		} else { 			$criteria = $values->buildCriteria(); 			$selectCriteria = $values->buildPkeyCriteria(); 		}
 
@@ -250,7 +250,7 @@ abstract class BaseUserPeer {
 		}
 		$affectedRows = 0; 		try {
 									$con->begin();
-			$affectedRows += BasePeer::doDeleteAll(UserPeer::TABLE_NAME, $con);
+			$affectedRows += BasePeer::doDeleteAll(CollaborationsPeer::TABLE_NAME, $con);
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -263,16 +263,16 @@ abstract class BaseUserPeer {
 	 public static function doDelete($values, $con = null)
 	 {
 		if ($con === null) {
-			$con = Propel::getConnection(UserPeer::DATABASE_NAME);
+			$con = Propel::getConnection(CollaborationsPeer::DATABASE_NAME);
 		}
 
 		if ($values instanceof Criteria) {
-			$criteria = clone $values; 		} elseif ($values instanceof User) {
+			$criteria = clone $values; 		} elseif ($values instanceof Collaborations) {
 
 			$criteria = $values->buildPkeyCriteria();
 		} else {
 						$criteria = new Criteria(self::DATABASE_NAME);
-			$criteria->add(UserPeer::ID, (array) $values, Criteria::IN);
+			$criteria->add(CollaborationsPeer::ID, (array) $values, Criteria::IN);
 		}
 
 				$criteria->setDbName(self::DATABASE_NAME);
@@ -291,13 +291,13 @@ abstract class BaseUserPeer {
 	}
 
 	
-	public static function doValidate(User $obj, $cols = null)
+	public static function doValidate(Collaborations $obj, $cols = null)
 	{
 		$columns = array();
 
 		if ($cols) {
-			$dbMap = Propel::getDatabaseMap(UserPeer::DATABASE_NAME);
-			$tableMap = $dbMap->getTable(UserPeer::TABLE_NAME);
+			$dbMap = Propel::getDatabaseMap(CollaborationsPeer::DATABASE_NAME);
+			$tableMap = $dbMap->getTable(CollaborationsPeer::TABLE_NAME);
 
 			if (! is_array($cols)) {
 				$cols = array($cols);
@@ -313,11 +313,11 @@ abstract class BaseUserPeer {
 
 		}
 
-		$res =  BasePeer::doValidate(UserPeer::DATABASE_NAME, UserPeer::TABLE_NAME, $columns);
+		$res =  BasePeer::doValidate(CollaborationsPeer::DATABASE_NAME, CollaborationsPeer::TABLE_NAME, $columns);
     if ($res !== true) {
         $request = sfContext::getInstance()->getRequest();
         foreach ($res as $failed) {
-            $col = UserPeer::translateFieldname($failed->getColumn(), BasePeer::TYPE_COLNAME, BasePeer::TYPE_PHPNAME);
+            $col = CollaborationsPeer::translateFieldname($failed->getColumn(), BasePeer::TYPE_COLNAME, BasePeer::TYPE_PHPNAME);
             $request->setError($col, $failed->getMessage());
         }
     }
@@ -332,12 +332,12 @@ abstract class BaseUserPeer {
 			$con = Propel::getConnection(self::DATABASE_NAME);
 		}
 
-		$criteria = new Criteria(UserPeer::DATABASE_NAME);
+		$criteria = new Criteria(CollaborationsPeer::DATABASE_NAME);
 
-		$criteria->add(UserPeer::ID, $pk);
+		$criteria->add(CollaborationsPeer::ID, $pk);
 
 
-		$v = UserPeer::doSelect($criteria, $con);
+		$v = CollaborationsPeer::doSelect($criteria, $con);
 
 		return !empty($v) > 0 ? $v[0] : null;
 	}
@@ -354,8 +354,8 @@ abstract class BaseUserPeer {
 			$objs = array();
 		} else {
 			$criteria = new Criteria();
-			$criteria->add(UserPeer::ID, $pks, Criteria::IN);
-			$objs = UserPeer::doSelect($criteria, $con);
+			$criteria->add(CollaborationsPeer::ID, $pks, Criteria::IN);
+			$objs = CollaborationsPeer::doSelect($criteria, $con);
 		}
 		return $objs;
 	}
@@ -363,11 +363,11 @@ abstract class BaseUserPeer {
 } 
 if (Propel::isInit()) {
 			try {
-		BaseUserPeer::getMapBuilder();
+		BaseCollaborationsPeer::getMapBuilder();
 	} catch (Exception $e) {
 		Propel::log('Could not initialize Peer: ' . $e->getMessage(), Propel::LOG_ERR);
 	}
 } else {
-			require_once 'lib/model/map/UserMapBuilder.php';
-	Propel::registerMapBuilder('lib.model.map.UserMapBuilder');
+			require_once 'lib/model/map/CollaborationsMapBuilder.php';
+	Propel::registerMapBuilder('lib.model.map.CollaborationsMapBuilder');
 }

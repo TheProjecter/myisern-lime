@@ -2,10 +2,10 @@
 
 
 
-class UserMapBuilder {
+class CollaborationsMapBuilder {
 
 	
-	const CLASS_NAME = 'lib.model.map.UserMapBuilder';
+	const CLASS_NAME = 'lib.model.map.CollaborationsMapBuilder';
 
 	
 	private $dbMap;
@@ -27,16 +27,16 @@ class UserMapBuilder {
 	{
 		$this->dbMap = Propel::getDatabaseMap('propel');
 
-		$tMap = $this->dbMap->addTable('isern_users');
-		$tMap->setPhpName('User');
+		$tMap = $this->dbMap->addTable('isern_collaborations');
+		$tMap->setPhpName('Collaborations');
 
 		$tMap->setUseIdGenerator(true);
 
 		$tMap->addPrimaryKey('ID', 'Id', 'int', CreoleTypes::INTEGER, true, null);
 
-		$tMap->addColumn('LOGIN', 'Login', 'string', CreoleTypes::VARCHAR, false, 50);
+		$tMap->addColumn('NAME', 'Name', 'string', CreoleTypes::VARCHAR, false, 255);
 
-		$tMap->addColumn('PASSWORD', 'Password', 'string', CreoleTypes::VARCHAR, false, 50);
+		$tMap->addColumn('DESCRIPTION', 'Description', 'string', CreoleTypes::LONGVARCHAR, false, null);
 
 	} 
 } 
