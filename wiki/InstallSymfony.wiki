@@ -1,18 +1,20 @@
-#summary Installation Guide for Users of the MyIsern system.
+#summary Installation Tips for installing Symfony, the web framework used by the MyIsern-lime system.
 
 = Introduction =
 
-This page will tell you how to install the Myisern system on your computer. The orginal system was developed and deployed to Linux. We provide links to help you get setup on other platforms.
+This page will walk you through installing symfony on your system. Much of the information presented here can be found on the [http://www.symfony-project.org Home Page of the Symfony Project].
 
-
-= Installing Symfony on Ubuntu =
+= Installing Symfony with Apache on Ubuntu =
 
 You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & PHP Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
 
 Installing Symfony on Ubuntu:
 
 The following sequence will enable you to get the system install on Ubuntu Linux:
-
+  First Install LAMP:
+  # apt-get install php5 apache2 mysql-server
+    
+  Install Symfony
   # Edit /etc/apt/sources.list with your favorite editor (sudo gedit /etc/apt/sources.list )
   # add the following line at the end of the file:
      deb http://www.symfony-project.org/get debian/
