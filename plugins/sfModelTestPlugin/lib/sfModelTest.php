@@ -10,7 +10,7 @@ abstract class sfModelTest extends lime_test
 {
   protected $testDataDir;
 
-  public function __construct($fixturesFileOrDir = null)
+  public function __construct($fixturesFileOrDir = null,$plan=null)
   {
     if ($fixturesFileOrDir === null) {
       $this->testDataDir = SF_ROOT_DIR . '/test/fixtures';
@@ -24,7 +24,7 @@ abstract class sfModelTest extends lime_test
       throw new RuntimeException($this->testDataDir.': Could not read file or directory');
     }
 
-    parent::__construct();
+    parent::__construct($plan);
   }
 
   public function execute()

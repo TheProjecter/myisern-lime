@@ -30,7 +30,7 @@ class sfPropelTest extends lime_test
     $this->diag($reflection);
     foreach ($reflection->getMethods() as $method) {
       if ($method->isPublic() && 0 === strpos($method->getName(), 'test_')) {
-
+        
         $this->loadData();
         $this->setup();
 
@@ -48,6 +48,7 @@ class sfPropelTest extends lime_test
 
   public function loadData()
   {
+    $this->sfPropelData = new sfPropelData();
     $this->sfPropelData->setDeleteCurrentData(true);
     $this->sfPropelData->loadData($this->testDataDir);
   }
