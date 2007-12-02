@@ -12,14 +12,15 @@ Installing Symfony on Ubuntu:
 
 The following sequence will enable you to get the system install on Ubuntu Linux:
   First Install LAMP:
-  # apt-get install php5 apache2 mysql-server
-    
+  # sudo apt-get install php5 apache2 mysql-server
+  # (Optional, mysql admin tool) sudo apt-get install phpmyadmin
+  # Test the apache installation by going to http://127.0.0.1/apache-default or   http://127.0.0.1/phpmyadmin if you installed phpmyadmin
   Install Symfony
   # Edit /etc/apt/sources.list with your favorite editor (sudo gedit /etc/apt/sources.list )
   # add the following line at the end of the file:
      deb http://www.symfony-project.org/get debian/
-  # apt-get update
-  # apt-get install php5-symfony php-pear php5-mysql
+  # sudo apt-get update
+  # sudo apt-get install php5-symfony php-pear php5-mysql
   
    This should install the dependencies for php5-symfony which include php5-cli, php5-common, php-pear, php5-mysql, php5-pgsql.
 
