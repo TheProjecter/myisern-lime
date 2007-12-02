@@ -78,4 +78,15 @@ class organizationActions extends sfActions
 
     return $this->redirect('organization/list');
   }
+  public function handleErrorUpdate()
+  {
+    if (!$this->getRequestParameter('id'))
+    {  
+      $this->forward('organization', 'create'); 
+    }
+    else 
+    {
+      $this->forward('organization', 'edit');
+    }
+  }  
 }

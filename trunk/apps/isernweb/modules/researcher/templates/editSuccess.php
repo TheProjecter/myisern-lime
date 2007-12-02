@@ -3,6 +3,11 @@
 // date: 2007/11/24 12:45:12
 ?>
 <?php use_helper('Object') ?>
+<?php if ($researcher->getId() ) : ?>
+<h1>Edit Researcher</h1>
+<?php else : ?>
+<h1>Create Researcher</h1>
+<?php endif; ?>
 
 <?php echo form_tag('researcher/update') ?>
 

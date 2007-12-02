@@ -33,22 +33,16 @@ class collaborationActions extends sfActions
   public function executeCreate()
   {
     $this->collaboration = new Collaboration();
-
+    $this->prepareOrganizationOptions(); 
+    $this->getCollaboratingOrganizationIds();
     $this->setTemplate('edit');
   }
 
   public function executeEdit()
   {
     $this->collaboration = CollaborationPeer::retrieveByPk($this->getRequestParameter('id'));
-    $organizations = OrganizationPeer::doSelect(new Criteria());
-    $options = array();
-    foreach ($organizations as $org)
-    {
-      $options[$org->getId()] = $org->getName();
-    }
-    asort($options);
-    $this->options = $options;
-    
+    $this->prepareOrganizationOptions(); 
+    $this->getCollaboratingOrganizationIds();
     $this->forward404Unless($this->collaboration);
   }
 
@@ -67,16 +61,22 @@ class collaborationActions extends sfActions
     $collaboration->setId($this->getRequestParameter('id'));
     $collaboration->setName($this->getRequestParameter('name'));
     $collaboration->setDescription($this->getRequestParameter('description'));
+    $collaboration->save();
+    foreach ($collaboration->getCollaboratingOrganizations() as $co) { 
+      $co->delete();
+    } 
 // From an action
     
-//    $this->logMessage("dude, ", PEAR_LOG_ERR);
-       $this->logMessage("[kevin] $this->getRequestParameter('collaboratingOrganizations') " . $this->getRequestParameter('collaboratingOrganizations'));
+//  $this->logMessage("dude, ", PEAR_LOG_ERR);
+    $this->logMessage("[kevin] $this->getRequestParameter('collaboratingOrganizations') " . $this->getRequestParameter('collaboratingOrganizations'));
     foreach ($this->getRequestParameter('collaboratingOrganizations') as $orgId ) {
+       $collaboratingOranization = new CollaboratingOrganization();
+       $collaboratingOranization->setCollaborationId($collaboration->getId());
+       $collaboratingOranization->setOrganizationId($orgId);
+       $collaboratingOranization->save();
        $this->logMessage("[kevin] orgid = $orgId ");    	
-   	
     }
 //    
-    $collaboration->save();
 
     return $this->redirect('collaboration/show?id='.$collaboration->getId());
   }
@@ -91,4 +91,36 @@ class collaborationActions extends sfActions
 
     return $this->redirect('collaboration/list');
   }
+  public function handleErrorUpdate()
+  {
+   if (!$this->getRequestParameter('id'))
+   {  
+     $this->forward('collaboration', 'create'); 
+   }
+   else {
+     $this->forward('collaboration', 'edit');
+   }
+  }
+  public function prepareOrganizationOptions() {
+    $organizations = OrganizationPeer::doSelect(new Criteria());
+    $options = array();
+    foreach ($organizations as $org)
+    {
+      $options[$org->getId()] = $org->getName();
+    }
+    asort($options);
+    $this->options = $options;
+  }
+  public function getCollaboratingOrganizationIds() {
+
+    $ids=array();
+    if ($this->collaboration && $this->collaboration->getCollaboratingOrganizations() ) { 
+      $ids = array_map('collaborationActions::orgId',$this->collaboration->getCollaboratingOrganizations());
+    }
+    $this->collaboratingOrganizationIds = $ids;
+  }
+  public static function orgId($co)
+    {
+       return $co->getOrganizationId();
+    }
 }

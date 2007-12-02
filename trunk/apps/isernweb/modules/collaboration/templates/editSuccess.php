@@ -3,10 +3,26 @@
 // date: 2007/11/25 00:34:09
 ?>
 <?php use_helper('Object') ?>
+<?php if ($collaboration->getId() ) : ?>
+<h1>Edit Collaboration</h1>
+<?php else : ?> 
+<h1>Create Collaboration</h1>
+<?php endif; ?>
 
 <?php echo form_tag('collaboration/update') ?>
 
 <?php echo object_input_hidden_tag($collaboration, 'getId') ?>
+<?php if ($sf_request->hasErrors()): ?>
+  <div id="errors" style="padding:10px;">
+    Please correct the following errors and resubmit:
+    <ul>
+    <?php foreach ($sf_request->getErrors() as $error): ?>
+      <li><?php echo $error ?></li>
+    <?php endforeach; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+
 
 <table>
 <tbody>
@@ -22,9 +38,13 @@
   'size' => '30x3',
 )) ?></td>
 </tr>
+<? 
+
+   
+?>
 <tr>
   <th>Organizations:</th>
-  <td><?php echo select_tag('collaboratingOrganizations', options_for_select($options),array('multiple' => true)) ?></td>
+  <td><?php echo select_tag('collaboratingOrganizations', options_for_select($options,$collaboratingOrganizationIds),array('multiple' => true)) ?></td>
 </tr>
 
 

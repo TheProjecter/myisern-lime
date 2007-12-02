@@ -33,13 +33,15 @@ class researcherActions extends sfActions
   public function executeCreate()
   {
     $this->researcher = new Researcher();
-
     $this->setTemplate('edit');
   }
 
   public function executeEdit()
   {
-    $this->researcher = ResearcherPeer::retrieveByPk($this->getRequestParameter('id'));
+  	
+    if (!$this->researcher) { 
+      $this->researcher = ResearcherPeer::retrieveByPk($this->getRequestParameter('id'));
+    } 
     $this->forward404Unless($this->researcher);
   }
 
@@ -47,24 +49,25 @@ class researcherActions extends sfActions
   {
     if (!$this->getRequestParameter('id'))
     {
-      $researcher = new Researcher();
+      $this->researcher = new Researcher();
     }
     else
     {
-      $researcher = ResearcherPeer::retrieveByPk($this->getRequestParameter('id'));
-      $this->forward404Unless($researcher);
+    	
+      $this->researcher = ResearcherPeer::retrieveByPk($this->getRequestParameter('id'));
+      $this->forward404Unless($this->researcher);
     }
+    $this->logMessage("[kevin] id =  " . $this->getRequestParameter('id'));
+    $this->researcher->setId($this->getRequestParameter('id'));
+    $this->researcher->setOrganizationId($this->getRequestParameter('organization_id') ? $this->getRequestParameter('organization_id') : null);
+    $this->researcher->setName($this->getRequestParameter('name'));
+    $this->researcher->setEmail($this->getRequestParameter('email'));
+    $this->researcher->setPictureLink($this->getRequestParameter('picture_link'));
+    $this->researcher->setBioStatement($this->getRequestParameter('bio_statement'));
 
-    $researcher->setId($this->getRequestParameter('id'));
-    $researcher->setOrganizationId($this->getRequestParameter('organization_id') ? $this->getRequestParameter('organization_id') : null);
-    $researcher->setName($this->getRequestParameter('name'));
-    $researcher->setEmail($this->getRequestParameter('email'));
-    $researcher->setPictureLink($this->getRequestParameter('picture_link'));
-    $researcher->setBioStatement($this->getRequestParameter('bio_statement'));
+    $this->researcher->save();
 
-    $researcher->save();
-
-    return $this->redirect('researcher/show?id='.$researcher->getId());
+    return $this->redirect('researcher/show?id='.$this->researcher->getId());
   }
 
   public function executeDelete()
@@ -79,6 +82,13 @@ class researcherActions extends sfActions
   }
   public function handleErrorUpdate()
   {
-    $this->forward('researcher', 'create');
+    if (!$this->getRequestParameter('id'))
+    {  
+      $this->forward('researcher', 'create'); 
+    }
+    else 
+    {
+      $this->forward('researcher', 'edit');
+    }
   }
 }
