@@ -7,24 +7,33 @@ This page will tell you how to install the Myisern system on your computer. The 
 
 = Installing Symfony on Ubuntu =
 
-You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & Php Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
+You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & PHP Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
 
 Installing Symfony on Ubuntu:
 
 The following sequence will enable you to get the system install on Ubuntu Linux:
 
+  # Edit /etc/apt/sources.list with your favorite editor (sudo gedit /etc/apt/sources.list )
+  # add the following line at the end of the file:
+     deb http://www.symfony-project.org/get debian/
   # apt-get install php5-symfony
 
 
 
 = Installing Symfony on Windows =
 
-The [http://www.symfony-project.org/installation|Symfony Project Installation Page] provides an article describing how to install Symfony on Windows. 
+The [http://www.symfony-project.org/installation  Symfony Project Installation Page] has articles describing how to install Symfony on Windows. The easiest way is to follow the instructions provided in the article [http://trac.symfony-project.com/wiki/BeginningSymfonyWithPear Beginning Symfony Project with XAMPP and Pear]. 
 
-http://trac.symfony-project.com/wiki/HowToInstallSymfonyOnWindowsWithWamp
-Requirements:
+A more detailed installation would begin with installing [http://www.wampserver.com/en/ WAMP] and then the directions for [http://trac.symfony-project.com/wiki/HowToInstallPearOnWindowsWithWamp How to install PEAR on windows with WAMP] and [http://trac.symfony-project.com/wiki/HowToInstallSymfonyOnWindowsWithWamp How to install Symfony on windows with WAMP]
 
-Other OS Installs
+
+= Installing Symfony on Mac =
+
+The [http://www.symfony-project.org/installation  Symfony Project Installation Page] has articles describing how to install Symfony on Macs. The following is a summary of what is provide:
+  * [http://trac.symfony-project.com/wiki/InstallingSymfonyOnMacOSXWithPHPBinaryFromEntropy Installing Symfony on MacOsX with php5 binary from entropy] (This one looks the easiest.)
+
+  * [http://trac.symfony-project.com/wiki/SymfonyMacOsXIntel Install a Symfony on a MacBook Pro]
+
 
 Windows:
 
