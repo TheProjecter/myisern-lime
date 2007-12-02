@@ -133,7 +133,6 @@ CREATE TABLE `isern_users`
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`login` VARCHAR(50),
 	`password` VARCHAR(50),
-	`created_at` DATETIME,
 	PRIMARY KEY (`id`)
 )Type=MyISAM;
 

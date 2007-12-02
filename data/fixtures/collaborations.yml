@@ -1,0 +1,52 @@
+Collaboration:
+  c1:
+    name: UM-UH
+    description: |
+      A graduate student at the University of Hawaii spent the summer working in the University of Maryland research group.
+  c2:
+    name: JAMSS-UH
+
+Organization:
+  o1:
+    name: National Research Council Canada
+  o2:
+    name: Avaya Labs Research
+  o3:
+    name: Stevens Institute of Technology
+  o4:
+    name: Carnegie Mellon University
+  o5:
+    name: Japan Manned Space Systems Corporation
+  o6:
+    name: University of Hawaii
+  o7:
+    name: University of Maryland
+CollaboratingOrganization:
+  co1:
+    collaboration_id: c1
+    organization_id: o6
+  co2:
+    collaboration_id: c1
+    organization_id: o7
+  co3:
+    collaboration_id: c2
+    organization_id: o5
+  co4:
+    collaboration_id: c2
+    organization_id: o7
+CollaborationYear:
+  cy1:
+    collaboration_id: c1
+    year:2006
+  cy2:
+    collaboration_id: c1
+    year:2005
+  cy3:
+    collaboration_id: c2
+    year:2005
+  cy4:
+    collaboration_id: c2
+    year:2006
+  cy5:
+    collaboration_id: c2
+    year:2007

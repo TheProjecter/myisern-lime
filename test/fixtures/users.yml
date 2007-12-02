@@ -1,4 +1,5 @@
 User:
   u1:
+    id: 1
     login: isern
-    password: isern2008
+    password: testpassword
