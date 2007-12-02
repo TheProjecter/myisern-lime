@@ -2,19 +2,20 @@
 
 = Introduction =
 
-This page will walk you through installing symfony on your system. Much of the information presented here can be found on the [http://www.symfony-project.org Home Page of the Symfony Project].
+This page will walk you through installing [http://www.symfony-project.org Symfony] on your system. Much of the information presented here can be found on the [http://www.symfony-project.org/installation Installation Page of the Symfony Project].
 
-= Installing Symfony with Apache on Ubuntu =
+= Installing Symfony with LAMP on Ubuntu =
 
-You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & PHP Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
+You must first install PHP 5, Apache/2.2.4, Mysql 5 & PHP Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
 
 Installing Symfony on Ubuntu:
 
 The following sequence will enable you to get the system install on Ubuntu Linux:
-  First Install LAMP:
+  First Install LAMP and other required php packages:
   # sudo apt-get install php5 apache2 mysql-server
+  # sudo apt-get install php-xml-util php5-xsl
   # (Optional, mysql admin tool) sudo apt-get install phpmyadmin
-  # Test the apache installation by going to http://127.0.0.1/apache-default or   http://127.0.0.1/phpmyadmin if you installed phpmyadmin
+  # Test the apache installation by going to http://127.0.0.1/apache2-default or   http://127.0.0.1/phpmyadmin if you installed phpmyadmin
   Install Symfony
   # Edit /etc/apt/sources.list with your favorite editor (sudo gedit /etc/apt/sources.list )
   # add the following line at the end of the file:
@@ -41,14 +42,9 @@ The [http://www.symfony-project.org/installation  Symfony Project Installation P
 
   * [http://trac.symfony-project.com/wiki/SymfonyMacOsXIntel Install a Symfony on a MacBook Pro]
 
+= Another Solution =
 
-Windows:
+If you are on Windows and you have a lot of memory and hard disk space, you could install Ubuntu on VirtualBox and install the system on Ubuntu. Follow the instructions here:
+ [http://www.simplehelp.net/2007/05/13/how-to-install-ubuntu-studio-in-windows-using-virtualbox-a-complete-walkthrough/ How to install ubuntu studio in windows]
 
-
-
-
-You must install the symfony pear package on your system. This is documented on the symfony website at http://www.symfony-project.org/installation. If you are not on a Linxu system, we recommend that you install it using the "PEAR installation." If you are on a linux system that includes a package for symfony, we recommend that you use the package. 
-
-The Symfony websites includes on this page http://trac.symfony-project.com/ a description of how to install on Windows and Mac. Please make comments on this page as to your experience.
-
-Setting up apache without virtual hosting:
+This is risk free way to try out a full linux desktop environment. After doing this perhaps you will see the light and [http://www.tuxmagazine.com/node/1000117 Switch to linux]
