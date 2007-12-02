@@ -27,3 +27,22 @@ Researcher:
     picture_link: http://www.sei.cmu.edu/staff/dz/dz.gif
     bio_statement: |
       Main empirical research areas: risk identification and cost estimation for System of System Integration efforts, measuring the impacts of model-based engineering process improvement programs, empirical validation of software product quality measures, additional research conducted by other areas of the SEI.
+  r5:
+    name: Victor Basili
+    organization_id: o7
+    email: basili@cs.umd.edu
+    picture_link: http://www.cs.umd.edu/~basili/Smiling%20Vic.JPG
+    bio_statement: |
+      Victor Basili is a Professor of Computer Science at the University of Maryland.
+  r6:
+    name: Lorin Hochstein
+    organization_id: o7
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/hochstein_lorin.png
+    bio_statement: Graduate Research Assistant
+  r7:
+    name: Marvin V. Zelkowitz
+    organization_id: o7
+    email: 
+    picture_link: http://www.cs.umd.edu/~mvz/mvz-2006.jpg
+    bio_statement: Professor of Computer Science

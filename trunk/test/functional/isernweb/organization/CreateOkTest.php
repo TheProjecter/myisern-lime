@@ -5,7 +5,7 @@ require(dirname(__FILE__).'/OrganizationBaseTest.php');
 
 class OrganizationTest extends OrganizationBaseTest
 {
-  public function test_create_fails() 
+  public function test_create_ok() 
   {
   	
   	$oldCount = OrganizationPeer::doCount(new Criteria());
@@ -14,7 +14,12 @@ class OrganizationTest extends OrganizationBaseTest
     	checkResponseElement('body', '/Organization/')->
     	checkResponseElement('body', '/Name/');
     $this->b->click('Create Organization')->
-        checkResponseElement('body', '/Create\/Edit Organization/');
+        checkResponseElement('body', '/Create Organization/');
+    $this->b->click('save',array('name' => 'my new org'))->
+        isRedirected()->
+     	followRedirect()->
+        checkResponseElement('body', '/View Organization/') ;
+    $this->b->test()->is($oldCount+1,OrganizationPeer::doCount(new Criteria()), "Organization count should still be " . ($oldCount+1));
   }  
 }
 

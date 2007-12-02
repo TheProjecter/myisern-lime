@@ -4,7 +4,7 @@ define('SF_APP', 'isernweb');
 
 require(dirname(__FILE__).'/../../../../plugins/sfModelTestPlugin/bootstrap/model-unit.php');
 
-class OrganizationBaseTest extends sfPropelTest
+class ResearcherBaseTest extends sfPropelTest
 {
 	
   protected $b;
@@ -29,23 +29,23 @@ class OrganizationBaseTest extends sfPropelTest
     } 
   }
   public function goto_show() {
-    $this->b->get('/organization/list')->
-    	checkResponseElement('body', '/Organization/')->
+    $this->b->get('/researcher/list')->
+    	checkResponseElement('body', '/Researcher/')->
     	checkResponseElement('body', '/Name/')->
-    	checkResponseElement('body', '/' . $this->Organizations['o1']['name'] . '/')->
-    	checkResponseElement('body', '/' . $this->Organizations['o2']['name'] . '/');
-     $this->b->click($this->Organizations['o1']['name'])->
-        checkResponseElement('body', '/View Organization/')->     
-        checkResponseElement('body', '/' . $this->Organizations['o1']['name'] . '/'); // should take us to the show screen!.  	
+    	checkResponseElement('body', '/' . $this->Researchers['r1']['name'] . '/')->
+    	checkResponseElement('body', '/' . $this->Researchers['r2']['name'] . '/');
+     $this->b->click($this->Researchers['r1']['name'])->
+        checkResponseElement('body', '/View Researcher/')->     
+        checkResponseElement('body', '/' . $this->Researchers['r1']['name'] . '/'); // should take us to the show screen!.  	
   }
   
   public function goto_edit() {
   	 $this->goto_show();
      $this->b->click('edit')->
-        checkResponseElement('body', '/Edit Organization/');
+        checkResponseElement('body', '/Edit Researcher/');
      $dom = $this->b->getResponseDom();
-     $this->b->test()->is($dom->getElementsByTagName('input')->item(1)->getAttribute('value'),$this->Organizations['o1']['name'], 
-        "First field should be organization name");
+     $this->b->test()->is($dom->getElementsByTagName('input')->item(1)->getAttribute('value'),$this->Researchers['r1']['name'], 
+        "First field should be researcher name");
   }
   
 }
