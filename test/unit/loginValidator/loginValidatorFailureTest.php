@@ -1,9 +1,8 @@
 <?php
 
 define('SF_APP', 'isernweb');
-require(dirname(__FILE__).'/../../apps/isernweb/lib/myUser.class.php');
-require(dirname(__FILE__).'/../../apps/isernweb/lib/myLoginValidator.class.php');
-require(dirname(__FILE__).'/../../plugins/sfPropelTestPlugin/bootstrap/propel-unit.php');
+require(dirname(__FILE__).'/loginBaseTest.php');
+
 
 class myLoginValidatorTest extends sfPropelTest
 {
@@ -20,17 +19,8 @@ class myLoginValidatorTest extends sfPropelTest
   public function teardown() {
     $this->request->removeError('login');
   }
-  public function test_validator_success()
-  {
-    $this->request->setParameter('login', 'isern');
-    $this->request->setParameter('password', 'isern2008');
-    $retval = $this->manager->execute();
-    $this->is($retval, true, "validator should return true");
-    $this->is($this->request->getErrors(), Array(), "errors should be an empty array");
-  }
   public function test_validator_failures()
   {
-
     $values =  array('invalid', 'testbad');
     $this->diag('myLoginValidator()');
     foreach ( $values as $value ) 
@@ -42,17 +32,8 @@ class myLoginValidatorTest extends sfPropelTest
       $this->is($retval, false, "validator should return false for $value ");
       $this->ok(sizeof($this->request->getErrors()) > 0, "errors should not be an empty array");      
       $this->request->removeError('login');
-            
     } 
   }
-  public function test_validator_bad_password()
-  {
-    $this->request->setParameter('login', 'isern');
-    $this->request->setParameter('password', 'isern2008xxx');
-    $retval = $this->manager->execute();
-    $this->is($retval, false, "validator should return true");
-    $this->ok(sizeof($this->request->getErrors()) > 0, "errors should not be an empty array");
-  }  
 }
 
 $test = new myLoginValidatorTest();
