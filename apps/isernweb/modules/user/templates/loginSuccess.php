@@ -18,7 +18,8 @@
 
 <?php echo form_tag('user/login') ?>
 
-  
+  Welcome to IsernWeb. <br />
+  Please login.
  <table>
 <tbody>
 <tr>
@@ -31,7 +32,7 @@
 </tr>
 <tr>
   <td colspan=2>  <?php echo input_hidden_tag('referer', $sf_request->getAttribute('referer')) ?>
-  <?php echo submit_tag('sign in') ?></td>
+  <?php echo submit_tag('Sign In') ?></td>
 </tr>
  
 

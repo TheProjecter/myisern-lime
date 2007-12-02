@@ -3,11 +3,24 @@
 // date: 2007/11/24 12:45:00
 ?>
 <?php use_helper('Object') ?>
-
+<?php if ($organization->getId() ) : ?>
+<h1>Edit Organization</h1>
+<?php else : ?>
+<h1>Create Organization</h1>
+<?php endif; ?>
 <?php echo form_tag('organization/update') ?>
 
 <?php echo object_input_hidden_tag($organization, 'getId') ?>
-
+<?php if ($sf_request->hasErrors()): ?>  
+  <div id="errors" style="padding:10px;">
+    Please correct the following errors and resubmit:
+    <ul>
+    <?php foreach ($sf_request->getErrors() as $error): ?>
+      <li><?php echo $error ?></li>
+    <?php endforeach; ?>
+    </ul>
+  </div>
+<?php endif; ?>
 <table>
 <tbody>
 <tr>

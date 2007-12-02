@@ -3,7 +3,7 @@
 // date: 2007/11/24 12:45:12
 ?>
 <h1>Researchers</h1>
-<?php echo link_to ('Create Researchers', 'researcher/create') ?>
+<?php echo link_to ('Create Researcher', 'researcher/create') ?>
 
 <table class='list'>
 <thead>
