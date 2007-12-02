@@ -1,22 +1,38 @@
-#summary Installation Guide for the MyIsern system.
+#summary Installation Guide for Users of the MyIsern system.
 
 = Introduction =
 
-This page will tell you how to install the myisern system on your computer. The orginal system was deployed to linux however, I will attempt to clarify on how to install on Windows XP and Mac OS.
+This page will tell you how to install the Myisern system on your computer. The orginal system was developed and deployed to Linux. We provide links to help you get setup on other platforms.
 
 
-= Details =
+= Installing Symfony on Ubuntu =
+
+You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & Php Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
+
+Installing Symfony on Ubuntu:
+
+The following sequence will enable you to get the system install on Ubuntu Linux:
+
+  # apt-get install php5-symfony
 
 
+
+= Installing Symfony on Windows =
+
+The [http://www.symfony-project.org/installation|Symfony Project Installation Page] provides an article describing how to install Symfony on Windows. 
+
+http://trac.symfony-project.com/wiki/HowToInstallSymfonyOnWindowsWithWamp
 Requirements:
 
-You must first install PHP 5, Apache/2.2.4, Sqlite (2.8.17) & Php Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl  packages.
+Other OS Installs
 
-Install symfony.
+Windows:
+
+
+
 
 You must install the symfony pear package on your system. This is documented on the symfony website at http://www.symfony-project.org/installation. If you are not on a Linxu system, we recommend that you install it using the "PEAR installation." If you are on a linux system that includes a package for symfony, we recommend that you use the package. 
 
 The Symfony websites includes on this page http://trac.symfony-project.com/ a description of how to install on Windows and Mac. Please make comments on this page as to your experience.
 
 Setting up apache without virtual hosting:
-
