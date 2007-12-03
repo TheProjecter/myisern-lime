@@ -1,4 +1,5 @@
 #summary Installation Tips for installing Symfony, the web framework used by the MyIsern-lime system.
+#labels Featured
 
 = Introduction =
 
