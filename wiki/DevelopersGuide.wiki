@@ -1,7 +1,7 @@
 #summary Guide to enhance the Mysern System.
 = Introduction =
 
-Developers can download and modify the source code for the Myisern project. Below is a few tips and tricks.
+If you are a PHP Developers, you are welcome to download the source code for the Myisern project and enchance the system. Below is a guide to getting oriented with the system. 
 
 
 = Getting Started =
