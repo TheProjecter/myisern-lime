@@ -44,7 +44,7 @@ The [http://www.symfony-project.org/installation  Symfony Project Installation P
 
 = Another Solution =
 
-If you are on Windows and you have a lot of memory and hard disk space, you could install Ubuntu on VirtualBox and install the system on Ubuntu. Follow the instructions here:
+If you are on Windows and you have a lot of memory and hard disk space, you could install Ubuntu on [http://www.virtualbox.org VirtualBox] and install the system on Ubuntu. Follow the instructions here:
  [http://www.simplehelp.net/2007/05/13/how-to-install-ubuntu-studio-in-windows-using-virtualbox-a-complete-walkthrough/ How to install ubuntu studio in windows]
 
 This is risk free way to try out a full linux desktop environment. After doing this perhaps you will see the light and [http://www.tuxmagazine.com/node/1000117 Switch to linux]
