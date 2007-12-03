@@ -25,9 +25,9 @@ The following sequence will enable you to get the system install on Ubuntu Linux
   # sudo apt-get update
   # sudo apt-get install php5-symfony php-pear php5-mysql
   
-   This should install the dependencies for php5-symfony which include php5-cli, php5-common, php-pear, php5-mysql, php5-pgsql.
+This should install the dependencies for php5-symfony which include php5-cli, php5-common, php-pear, php5-mysql, php5-pgsql.
 
-  If you don't want to install the .deb package, you can install using pear. Follow the [http://www.symfony-project.org/installation Symfony installation instruction] found on the Symfony website.
+If you don't want to install the .deb package, you can install using pear. Follow the [http://www.symfony-project.org/installation Symfony installation instruction] found on the Symfony website.
 
 
 = Installing Symfony on Windows =
@@ -50,3 +50,5 @@ If you are on Windows and you have a lot of memory and hard disk space, you coul
  [http://www.simplehelp.net/2007/05/13/how-to-install-ubuntu-studio-in-windows-using-virtualbox-a-complete-walkthrough/ How to install ubuntu studio in windows]
 
 This is risk free way to try out a full linux desktop environment. After doing this perhaps you will see the light and [http://www.tuxmagazine.com/node/1000117 Switch to linux]
+
+Now you are ready to Install MyIsern. There is a [InstallationGuide Production Installation]  Guide as well as a [DeveloperInstallationGuide Developer Installation Guide]
