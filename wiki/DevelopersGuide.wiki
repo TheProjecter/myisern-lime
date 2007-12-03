@@ -6,7 +6,7 @@ Developers can download and modify the source code for the Myisern project. Belo
 
 = Getting Started =
 
-Before you begin, you will need to [InstallSymfony install Symfony] and [InstallationGuide Install MyIsern]. MyIsern used the Symfony framework so you may also want to read through some of the tutorial at the [http://www.symfony-project.org Symfony Project Home Page]. Symfony uses an MVC (Model-View-Controller) framework with an ORM (Object-Relationship-Management) backend. The system was developed using Mysql as a database but there are no database specific queries in the source code so another database could be used. 
+Before you begin, you will need to [InstallSymfony install Symfony] and [InstallationGuide install MyIsern]. MyIsern used the Symfony framework so you may also want to read through some of the tutorial at the [http://www.symfony-project.org Symfony Project Home Page]. Symfony uses an MVC (Model-View-Controller) framework with an ORM (Object-Relationship-Management) backend. The system was developed using Mysql as a database but there are no database specific queries in the source code so another database could be used. 
 
 = Database Setup =
 
