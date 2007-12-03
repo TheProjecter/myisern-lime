@@ -50,4 +50,4 @@ You can begin enhancing the system by adding additional validations and enchanci
 
 == Testing MyIsern ==
 
-Symfony includes its own home grown unit testing with the [http://trac.symfony-project.com/wiki/LimeTestingFramework Lime Testing Framework]. For most of the unit test developed for MyIsern, we are using the symfony plugin sfModelTestPlugin
+Symfony includes its own home grown unit testing with the [http://trac.symfony-project.com/wiki/LimeTestingFramework Lime Testing Framework]. For most of the unit test developed for MyIsern, we are using the symfony plugin [http://trac.symfony-project.com/wiki/sfModelTestPlugin sfModelTestPlugin].
