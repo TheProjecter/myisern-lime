@@ -8,15 +8,17 @@ This page will walk you through installing [http://www.symfony-project.org Symfo
 
 You must first install PHP 5, Apache/2.2.4, Mysql 5 & PHP Pear. Pear is the PHP Extension and Application Repository. You will also need the php-xml and php5-xsl packages.
 
-Installing Symfony on Ubuntu:
+=== Installing Symfony on Ubuntu ===
 
 The following sequence will enable you to get the system install on Ubuntu Linux:
-  First Install LAMP and other required php packages:
+
+*Install LAMP and other required php packages*
   # sudo apt-get install php5 apache2 mysql-server
   # sudo apt-get install php-xml-util php5-xsl
   # (Optional, mysql admin tool) sudo apt-get install phpmyadmin
   # Test the apache installation by going to http://127.0.0.1/apache2-default or   http://127.0.0.1/phpmyadmin if you installed phpmyadmin
-  Install Symfony
+
+*Install Symfony*
   # Edit /etc/apt/sources.list with your favorite editor (sudo gedit /etc/apt/sources.list )
   # add the following line at the end of the file:
      deb http://www.symfony-project.org/get debian/
