@@ -19,7 +19,7 @@ Later, we will show you how to setup virtual host and at that point you can move
 
 === Setup the Database === 
 
- If you installed phpmyadmin, you can use it to create your database. You will need to create a database called 'isern_production' and create a user 'isern' that has all permissions on that database.
+If you installed phpmyadmin, you can use that tool to create your database. You will need to create a database called 'isern_production' and create a user 'isern' that has all permissions on that database.
 
 (Developers, see the  [DevelopersInstallationGuide Developer's Installation Guide].)
 
@@ -36,7 +36,7 @@ GRANT ALL PRIVILEGES ON `isern\_%` . * TO 'isern'@'%';
 
 You have created the database but you still need to load the tables and the data.First you must edit the config/database.yml file included with the distribution. Open it your favorite editor. Change the password fields to the password that you set when creating the application mysql user above. Don't add any extra spaces to the yml file since it is space-sensitive.
 
-Next you will run the symfony task to create the dabase and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
+Next you will run the symfony task to create the database and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
 
 symfony propel-insert-sql
 symfony propel-load-data isernweb data/fixtures/users.yml prod
