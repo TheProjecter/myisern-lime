@@ -11,7 +11,7 @@ To do this, simply unzip the distribution file into you
   # Unzip the file into a directory. 
   On Linux
 {{{
-   unzip myisern-lime-2.0.200712021325.zip -d /var/www/
+   unzip myisern-lime-2.0.xxxxxx.zip -d /var/www/
 }}}
 
 Later, we will show you how to setup virtual host and at that point you can move it out of you web tree.
