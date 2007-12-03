@@ -4,7 +4,7 @@
 
 First, you must  [InstallSymfony install Symfony]. Begin by downloading the the latest distribution file of the system from the [http://code.google.com/p/myisern-lime/downloads/list Downloads Page]. This guide will cover how to install the system with an apache/mysql setup.
 
-=== Install MyIsern-lime in your web root ===
+=== Install MyIsern Lime in your web root ===
 
 To do this, simply unzip the distribution file into you 
 
