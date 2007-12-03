@@ -47,3 +47,7 @@ If you make changes to the database schema, you must use the symfony tasks to re
 The web application portion of MyIsern can can be found in `apps/isernweb`. Each controller/view can be found in the `apps/isernweb/module`. Using collaboration as an example, the view files will be found in `apps/isernweb/module/collaboration/templates` and the controller code resides in the `apps/isernweb/module/collaboration/templates/actions/actions.class.php`. Symfony also has a special folder for validation configuration. The directory for collaborations will be `apps/isernweb/module/collaboration/templates/validate/`. Validation methods make use of validation classes which can be reused throughout the application. These Validation classes are found in `apps/isernweb/lib`.
 
 You can begin enhancing the system by adding additional validations and enchancing the views and controllers.
+
+== Testing MyIsern ==
+
+Symfony includes its own home grown unit testing with the [http://trac.symfony-project.com/wiki/LimeTestingFramework Lime Testing Framework]. For most of the unit test developed for MyIsern, we are using the symfony plugin sfModelTestPlugin
