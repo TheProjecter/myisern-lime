@@ -1,5 +1,96 @@
 #summary Installation Guide for Users of the MyIsern system.
 
-= Introduction =
+= Installing Myiser-lime =
 
-First, you must install [InstallSymfony Install Symfony]
+First, you must  [InstallSymfony install Symfony]. Begin by downloading the the latest distribution file of the system from the [http://code.google.com/p/myisern-lime/downloads/list Downloads Page]. This guide will cover how to install the system with an apache/mysql setup.
+
+=== Install MyIsern-lime in your web root ===
+
+To do this, simply unzip the distribution file into you 
+
+  # Unzip the file into a directory. 
+  On Linux
+{{{
+   unzip myisern-lime-2.0.200712021325.zip -d /var/www/
+}}}
+
+Later, we will show you how to setup virtual host and at that point you can move it out of you web tree.
+
+=== Setup the Database === 
+
+ If you installed phpmyadmin, you can use it to create your database. You will need to create a database called 'isern_production' and create a user 'isern' that has all permissions on that database.
+
+(Developers, see the  [DevelopersInstallationGuide Developer's Installation Guide].)
+
+If you are not using phpmyadmin, you can use the mysql command line tool with the following sequence of commands:
+  * mysqladmin -u root create isern_production
+  * mysql -u root 
+{{{
+CREATE USER 'isern'@'%' IDENTIFIED BY 'password_change_me';
+
+GRANT USAGE ON * . * TO 'isern'@'%' IDENTIFIED BY 'password_change_me' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+
+GRANT ALL PRIVILEGES ON `isern\_%` . * TO 'isern'@'%';
+}}}
+
+You have created the database but you still need to load the tables and the data.First you must edit the config/database.yml file included with the distribution. Open it your favorite editor. Change the password fields to the password that you set when creating the application mysql user above. Don't add any extra spaces to the yml file since it is space-sensitive.
+
+Next you will run the symfony task to create the dabase and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
+
+symfony propel-insert-sql
+symfony propel-load-data isernweb data/fixtures/users.yml prod
+symfony propel-load-data isernweb data/fixtures/collaborations.yml prod
+
+=== Change Permissions ===
+
+Symfony needs to write to write to directories "log" and "cache." You will need to create these and make them writable by your web server. From  INSTALL_DIR/myisern-lime) root folder
+
+{{{
+mkdir cache log
+sudo chown www-data:www-data cache log
+## Or altenatively, you can do:
+chmod 777 cache log
+}}}
+
+=== Viewing the Myisern-lime Web Application ===
+
+You are now ready to login to the MyIsern system. Point your broswer to your installation of MyIsern: 
+
+http://127.0.0.1/myisern-lime/web/
+
+The login is isern and the password is isern2008. If you want to change this, edit the file data/fixtures/users.yml, put in a new value for the password and reissue the command 
+
+ symfony propel-load-data isernweb data/fixtures/users.yml prod
+
+=== Setting up the Virtual Host (Optional) ===
+
+If you don't mind having you application web directory be "myisern-lime/web", you can skip this section. We will show you how to setup the virtual host so that the web directory will be http://127.0.0.1/isernweb instead of http://127.0.0.1/myisern-lime/web.
+
+First, move your myiser-lime directory to a directory that is not in your apache web tree:
+
+{{{
+ mv /var/www/myisern-lime /home/kenglish/applications
+  # or, to be generic. 
+ mv /var/www/myisern-lime /dir/to/install
+}}}
+
+Create a file isernweb.conf in your the conf.d of your Apache2 configuration directory.
+
+{{{
+# Isernweb Apache configuration
+
+Alias /isernweb /dir/to/install/myisern-lime/web
+
+<Directory /dir/to/install/myisern-lime/web>
+        Options Indexes FollowSymLinks
+        DirectoryIndex index.php
+        AllowOverride All
+        Allow from All
+
+  # To use the latest version of symfony libraries 
+  # ln -s /usr/share/php5/symfony/data/web/sf /dir/to/install/myisern-lime/web
+
+</Directory>
+}}}
+
+You will need to restart Apache for this to take effect. It is not necessary to symlink the "sf" unless you plan on doing development. If you plan on doing development, please go to our [DevelopersInstallationGuide Developer's Installation Guide].
