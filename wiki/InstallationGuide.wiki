@@ -95,3 +95,11 @@ Alias /isernweb /dir/to/install/myisern-lime/web
 }}}
 
 You will need to restart Apache for this to take effect. It is not necessary to symlink the "sf" unless you plan on doing development. If you plan on doing development, please go to our [DevelopersInstallationGuide Developer's Installation Guide].
+
+=== Troubleshooting the Install ===
+
+There are many steps in this install process. If you are having difficulty installing the system, make sure you have done each step. First, you should make sure Symfony is working. There is an excellent tutorial called [http://www.symfony-project.org/tutorial/1_0/my-first-project My First Symfony Project] which can help you test Symfony. Download the sandbox code that they provide and make sure it runs. If you can not get this running, there is something wrong with your PHP, Apache and MySql setup. There are plenty resources on the Internet that can help you troubleshoot your setup.
+
+If you have installed Symfony directly from the .zip or .tar.gz distribution file, you may have left out some important dependencies. It is better to install Symfony from using your  Linux distribution's package or PEAR. PEAR will ensure that all of the dependencies are installed. 
+
+If you still have problems, please the owner of this project.
