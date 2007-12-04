@@ -51,19 +51,21 @@ You can begin enhancing the system by adding additional validations and enchanci
 
 === Symfony Tips ===
 
-You may experience a learning curver while using Symfony. Keep in mind that Symfony (like MyIsern) is an open source project. You can browse their [http://svn.symfony-project.com/trunk/ svn repositoy]. Do not be afraid to refer to their code if you having a problem understand how it works internally. Symfony provides a good logging library which is explained in their [http://www.symfony-project.org/book/1_0/16-Application-Management-Tools Application Management Tools] Chapter. Briefly, anywhere within symfony you can write to the log like this:
+You may experience a learning curver while using Symfony. Keep in mind that Symfony (like MyIsern) is an open source project. Their [http://svn.symfony-project.com/trunk/ svn repositoy] is available online. Do not be afraid to refer to their code if you having a problem understanding how Symfony works internally. 
+
+Symfony provides a good logging library which is explained in their [http://www.symfony-project.org/book/1_0/16-Application-Management-Tools Application Management Tools] Chapter. Briefly, anywhere within the MyIsern Symfony application you can write to the log like this:
 {{{
 sfContext::getInstance()->getLogger()->info("My log message shows my $variable");
 }}}
-However from you action class, you should use the cleaner version:
 
+However from you action class, you should use the more elegant version:
 {{{
 $this->logMessage($message, $level);
 }}}
 
-Log messages will appear in log/isern_dev.log if you are using the development environment. 
+Log messages will appear in log/isern_dev.log when you are using the development environment. 
 
-Also, when developing, follow conventions. Symfony has a pretty set way of handling things. You should use read through some of [http://www.symfony-project.org/askeet/1_0/ their tutorials] to get a good handle of these conventions.
+Also, when developing, follow conventions. Symfony has pretty set ways of handling things. You should use read through some of [http://www.symfony-project.org/askeet/1_0/ their tutorials] to get a good handle of these conventions.
 
 === Testing MyIsern ===
 
@@ -103,5 +105,3 @@ phing clean
 === Keeping in touch ===
 
 Be sure to keep in touch with the lead developers for MyIsern.
-
-
