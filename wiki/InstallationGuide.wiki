@@ -29,7 +29,7 @@ If you are not using phpmyadmin, you can use the mysql command line tool with th
 {{{
 CREATE USER 'isern'@'%' IDENTIFIED BY 'password_change_me';
 
-GRANT USAGE ON * . * TO 'isern'@'%' IDENTIFIED BY 'password_change_me' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+GRANT USAGE ON * . * TO 'isern'@'%'  WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
 
 GRANT ALL PRIVILEGES ON `isern\_%` . * TO 'isern'@'%';
 
