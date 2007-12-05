@@ -53,6 +53,7 @@ propel.database.createUrl  = mysql://isern:password_change_me@localhost/isern_pr
 propel.database.url        =  mysql://isern:password_change_me@localhost/isern_production
 }}}
 to:
+=== Loading the seed data === 
 
 Next you will run the symfony task to create the database and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
 
