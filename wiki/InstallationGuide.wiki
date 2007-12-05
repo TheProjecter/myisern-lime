@@ -36,7 +36,8 @@ GRANT ALL PRIVILEGES ON `isern\_%` . * TO 'isern'@'%';
 Flush Privileges;
 }}}
 
-You have created the database but you still need to load the tables and the data.First you must edit the config/database.yml file included with the distribution. Open it your favorite editor. Change the password fields to the password that you set when creating the application mysql user above. Don't add any extra spaces to the yml file since it is space-sensitive.
+You have created the database but you still need to load the tables and the data. 
+Begin by opening the `config/database.yml` file included with the distribution in your favorite editor. Change the password fields to the password that you set when creating the application mysql user above. Don't add any extra spaces to the yml file since it is space-sensitive. Next, open the file `config/propel.ini` and change `password_change_me` to you new password (see line 5 and 6).
 
 Next you will run the symfony task to create the database and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
 
