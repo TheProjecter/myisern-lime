@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+
+<project name="testsite" basedir="." default="dist">
+
+    <property name="package"  value="${phing.project.name}" override="true"  />
+    <property name="builddir" value="./build"  override="true" />
+    <property name="srcdir"   value="${project.basedir}" override="true"  />
+    <property name="system.name" value="myisern-lime" /> 
+    <tstamp/> 
+
+    <property name="majorVersionNumber" value="2" />
+    <property name="minorVersionNumber" value="0" />
+    <property name="version" value="${majorVersionNumber}.${minorVersionNumber}.${DSTAMP}${TSTAMP}" />
+
+    <tstamp>
+      <format property="DAYSTAMP" pattern="Mdd" />
+    </tstamp>
+
+    <!-- Fileset for all files -->
+    <fileset dir="." id="allfiles">
+        <include name="symfony" />
+
+        <include name="apps/**" />
+        <include name="config/**" />
+        <include name="data/**" />
+        <include name="lib/**" />
+        <include name="plugins/**" />
+        <include name="test/**" />
+        <include name="web/**" />
+    </fileset>
+    <target name="clean" description="clean the build directory">
+       <delete dir="build" />
+    </target>
+
+    <!-- Main Target -->
+    <target name="build" description="build target" depends="clean">
+        <copy todir="${builddir}/${system.name}/">
+            <fileset refid="allfiles" />
+        </copy>
+        <delete file="${builddir}/${system.name}/config/databases.dist.yml" />
+        <delete file="${builddir}/${system.name}/config/propel.dist.ini" />
+
+        <copy file="config/databases.dist.yml" tofile="${builddir}/${system.name}/config/databases.yml" overwrite="true"/>
+        <copy file="config/propel.dist.ini" tofile="${builddir}/${system.name}/config/propel.ini" overwrite="true"/>
+    </target>
+
+    <target name="dist" depends="build">
+        <echo msg="Creating archive..." />
+        <zip destfile="./build/${system.name}-${version}.zip"  basedir="build" />
+<!--        <zip destfile="./build/${system.name}-${version}.zip" >
+            <fileset dir="build">
+                <include name="**/**" />
+            </fileset>
+        </zip>
+-->
+        <echo msg="Files copied and compressed in build directory OK!" />
+<!--       <delete dir="build/${system.name}" /> -->
+    </target>
+
+    <!-- Rebuild -->
+    <target name="rebuild" description="rebuilds this package">
+        <delete dir="${builddir}" />
+        <phingcall target="dist" />
+    </target>
+</project>

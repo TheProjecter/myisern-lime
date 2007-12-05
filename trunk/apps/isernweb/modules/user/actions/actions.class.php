@@ -40,7 +40,7 @@ class userActions extends sfActions
 //     if ($user)
 //     {
 //     	$this->getUser()->setAuthenticated(true);
-     	return $this->redirect('main');
+     	return $this->redirect('researcher');
      
 //     } else {
 //     	return sfView::SUCCESS; 
