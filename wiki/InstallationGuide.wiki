@@ -37,7 +37,20 @@ Flush Privileges;
 }}}
 
 You have created the database but you still need to load the tables and the data. 
-Begin by opening the `config/database.yml` file included with the distribution in your favorite editor. Change the password fields to the password that you set when creating the application mysql user above. Don't add any extra spaces to the yml file since it is space-sensitive. Next, open the file `config/propel.ini` and change `password_change_me` to you new password (see line 5 and 6).
+
+Set your new password in `config/database.yml` 
+{{{
+  password: password_change_me
+}}}
+
+Don't add any extra spaces to the yml file since it is space-sensitive. 
+
+Set your new password in `config/propel.ini` (line 5,6):
+{{{
+propel.database.createUrl  = mysql://isern:password_change_me@localhost/isern_production
+propel.database.url        =  mysql://isern:password_change_me@localhost/isern_production
+}}}
+to:
 
 Next you will run the symfony task to create the database and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
 
@@ -45,13 +58,14 @@ Next you will run the symfony task to create the database and load the data. Fro
 symfony propel-insert-sql
 symfony propel-load-data isernweb data/fixtures/users.yml prod
 symfony propel-load-data isernweb data/fixtures/collaborations.yml prod
+symfony clear-cache
 }}}
+
 === Change Permissions ===
 
 Symfony needs to write to write to directories "log" and "cache." You will need to create these and make them writable by your web server. From  INSTALL_DIR/myisern-lime) root folder
 
 {{{
-mkdir cache log
 chmod 777 cache log
 }}}
 
