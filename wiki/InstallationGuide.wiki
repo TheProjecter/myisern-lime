@@ -41,10 +41,11 @@ Begin by opening the `config/database.yml` file included with the distribution i
 
 Next you will run the symfony task to create the database and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
 
+{{{
 symfony propel-insert-sql
 symfony propel-load-data isernweb data/fixtures/users.yml prod
 symfony propel-load-data isernweb data/fixtures/collaborations.yml prod
-
+}}}
 === Change Permissions ===
 
 Symfony needs to write to write to directories "log" and "cache." You will need to create these and make them writable by your web server. From  INSTALL_DIR/myisern-lime) root folder
