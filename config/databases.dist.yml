@@ -6,7 +6,7 @@ all:
       host: localhost
       database: isern_production
       username: isern
-      password: asdfljkljohnson
+      password: password_change_me
 dev:
   propel:
     class:      sfPropelDatabase
@@ -15,7 +15,7 @@ dev:
       host: localhost
       database: isern_development
       username: isern
-      password: johnson
+      password: password_change_me
 test:
   propel:
     class:      sfPropelDatabase
@@ -24,4 +24,4 @@ test:
       host: localhost
       database: isern_test
       username: isern
-      password: johnson
+      password: password_change_me
