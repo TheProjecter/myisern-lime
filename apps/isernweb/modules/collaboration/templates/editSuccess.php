@@ -38,14 +38,23 @@
   'size' => '30x3',
 )) ?></td>
 </tr>
-<? 
-
-   
-?>
 <tr>
   <th>Organizations:</th>
   <td><?php echo select_tag('collaboratingOrganizations', options_for_select($options,$collaboratingOrganizationIds),array('multiple' => true)) ?></td>
 </tr>
+<?php echo "collaboration years = $collaborationYears"; ?>
+<tr>
+  <th>Years:</th>
+  <td>
+<?php  
+   for ($year = 1990; $year < 2011; $year++) { ?>
+<?php echo checkbox_tag('collaborationYears[]', $year, in_array($year, $collaborationYears))  ?> <?php echo $year ?> 
+     <? if (!( ($year+1)%5)) { ?> <br /> <? } ?>   
+<?php } ?> 
+</td>
+
+</tr>
+   
 
 
 </tbody>

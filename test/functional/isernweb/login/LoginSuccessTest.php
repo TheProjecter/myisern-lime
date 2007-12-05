@@ -13,7 +13,7 @@ class LoginTest extends sfPropelTest
         click('Sign In', array('login' =>'isern', 'password' => 'testpassword'))->
         isRedirected()->   // Check that request is redirected
         followRedirect()->
-        checkResponseElement('body', '/You are logged in/');
+        checkResponseElement('body', '/Researchers/');
     $b->get('/organization/list')->
 	    checkResponseElement('body', '/Organizations/')->
 	    checkResponseElement('body', '/Name/');   

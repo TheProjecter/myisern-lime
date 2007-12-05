@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<project name="testsite" basedir="." default="dist">
+<project name="myiser-lime" basedir="." default="dist">
 
     <property name="package"  value="${phing.project.name}" override="true"  />
     <property name="builddir" value="./build"  override="true" />

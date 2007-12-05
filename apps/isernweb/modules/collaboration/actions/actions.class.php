@@ -35,6 +35,7 @@ class collaborationActions extends sfActions
     $this->collaboration = new Collaboration();
     $this->prepareOrganizationOptions(); 
     $this->getCollaboratingOrganizationIds();
+    $this->getCollaborationYears();
     $this->setTemplate('edit');
   }
 
@@ -43,6 +44,7 @@ class collaborationActions extends sfActions
     $this->collaboration = CollaborationPeer::retrieveByPk($this->getRequestParameter('id'));
     $this->prepareOrganizationOptions(); 
     $this->getCollaboratingOrganizationIds();
+    $this->getCollaborationYears();
     $this->forward404Unless($this->collaboration);
   }
 
@@ -65,10 +67,7 @@ class collaborationActions extends sfActions
     foreach ($collaboration->getCollaboratingOrganizations() as $co) { 
       $co->delete();
     } 
-// From an action
-    
-//  $this->logMessage("dude, ", PEAR_LOG_ERR);
-    $this->logMessage("[kevin] $this->getRequestParameter('collaboratingOrganizations') " . $this->getRequestParameter('collaboratingOrganizations'));
+
     foreach ($this->getRequestParameter('collaboratingOrganizations') as $orgId ) {
        $collaboratingOranization = new CollaboratingOrganization();
        $collaboratingOranization->setCollaborationId($collaboration->getId());
@@ -76,7 +75,15 @@ class collaborationActions extends sfActions
        $collaboratingOranization->save();
        $this->logMessage("[kevin] orgid = $orgId ");    	
     }
-//    
+    foreach ($collaboration->getCollaborationYears() as $cy) {
+      $cy->delete();
+    }
+    foreach ($this->getRequestParameter('collaborationYears') as $year) { 
+       $collaborationYear = new Collaborationyear();
+       $collaborationYear->setCollaborationId($collaboration->getId());
+       $collaborationYear->setYear($year); 
+       $collaborationYear->save();
+    } 
 
     return $this->redirect('collaboration/show?id='.$collaboration->getId());
   }
@@ -119,8 +126,22 @@ class collaborationActions extends sfActions
     }
     $this->collaboratingOrganizationIds = $ids;
   }
-  public static function orgId($co)
-    {
-       return $co->getOrganizationId();
+  public function getCollaborationYears() {
+
+    $years=array();
+    if ($this->collaboration && $this->collaboration->getCollaborationYears() ) {
+      $years = array_map('collaborationActions::collaborationYear',$this->collaboration->getCollaborationYears());
     }
+    $this->collaborationYears = $years;
+  }
+
+  
+  public static function orgId($co)
+  {
+       return $co->getOrganizationId();
+  }
+  public static function collaborationYear($cy)
+  {
+       return $cy->getYear();
+  }
 }

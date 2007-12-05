@@ -1,6 +1,10 @@
 prod:
   .settings:
-    no_script_name:           off
+    error_reporting:        4095
+    web_debug:              on
+    cache:                  off
+    no_script_name:         off
+    etag:                   off
 
 dev:
   .settings:

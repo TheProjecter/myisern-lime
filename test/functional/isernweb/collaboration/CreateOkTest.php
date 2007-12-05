@@ -20,7 +20,10 @@ class CollaborationTest extends CollaborationBaseTest
     	checkResponseElement('body', '/Name/');
     $this->b->click('Create Collaboration')->
         checkResponseElement('body', '/Create Collaboration/');
-    $this->b->click('save',array('name' => 'Kenglish','collaboratingOrganizations' => array($organization1_id,$organization2_id ) ) )->
+    $this->b->click('save',array('name' => 'Kenglish',
+                                 'collaboratingOrganizations' => array($organization1_id,$organization2_id ),
+                                 'collaborationYears' => array(2000, 2009),                                 
+     ) )->
         isRedirected()->
      	followRedirect()->    
         checkResponseElement('body', '/View Collaboration/')->
