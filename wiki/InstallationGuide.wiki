@@ -23,10 +23,12 @@ If you installed phpmyadmin, you can use that tool to create your database. You 
 
 (Developers, see the  [DevelopersInstallationGuide Developer's Installation Guide].)
 
-If you are not using phpmyadmin, you can use the mysql command line tool with the following sequence of commands:
-  * mysqladmin -u root create isern_production
-  * mysql -u root 
+You can use either phpmyadmin or the mysql command line tool to issue the following commands. (Make sure to change the password.)
+
 {{{
+
+CREATE DATABASE isern_production;
+
 CREATE USER 'isern'@'%' IDENTIFIED BY 'password_change_me';
 
 GRANT USAGE ON * . * TO 'isern'@'%'  WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
