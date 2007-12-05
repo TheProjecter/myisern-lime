@@ -66,7 +66,7 @@ symfony clear-cache
 Symfony needs to write to write to directories "log" and "cache." You will need to create these and make them writable by your web server. From  INSTALL_DIR/myisern-lime) root folder
 
 {{{
-chmod 777 cache log
+chmod 777 cache log -R
 }}}
 
 === Viewing the Myisern-lime Web Application ===
@@ -75,9 +75,14 @@ You are now ready to login to the MyIsern system. Point your broswer to your ins
 
 http://127.0.0.1/myisern-lime/web/
 
-The login is isern and the password is isern2008. If you want to change this, edit the file data/fixtures/users.yml, put in a new value for the password and reissue the command 
-
+The login is isern and the password is isern2008. If you want to change this, edit the file data/fixtures/users.yml, put in a new value for the password and reissue these commands 
+{{{
+ chmod 777 cache log -R 
  symfony propel-load-data isernweb data/fixtures/users.yml prod
+ symfony clear-cache
+}}}
+
+The first line is optional but sometimes the webserver writes files that you do not have permission to and this will cause the propel-load-data task to fail.
 
 === Setting up the Virtual Host (Optional) ===
 
