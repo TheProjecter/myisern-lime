@@ -1,4 +1,4 @@
-#summary Guide to enhance the Mysern System.
+#summary Guide to enhancing the Mysern System.
 = Introduction =
 
 If you are a PHP Developers or just a curious hacker, you are welcome to download the source code for the Myisern project and enchance the system. This page provides a roadmap to help your get oriented. 
@@ -102,6 +102,15 @@ phing
 Clear out old build files.
 {{{
 phing clean
+}}}
+
+Create the build directory but not the zip file.
+{{{
+phing build
+}}}
+Create the build distribution file.
+{{{
+phing dist
 }}}
 
 === Keeping in touch ===
