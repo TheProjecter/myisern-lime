@@ -23,8 +23,8 @@
 
 <?php echo link_to('edit', 'collaboration/edit?id='.$collaboration->getId()) ?>
 &nbsp;<?php echo link_to('list', 'collaboration/list') ?>
-<table><tr><td>
-<h1>Collaborating Organizations:</h1>
+<table><tr><td valign='top'>
+<h1>Collaborating Organizations</h1>
 <table class='list'>
 <thead>
 <tr>
@@ -48,18 +48,21 @@
 <table class='list'>
 <thead>
 <tr>
-  <th>Year</th>
+  <th colspan=0>Year</th>
 </tr>
 </thead>
 <tbody>
-<?php $collaborationYears = $collaboration->getCollaborationYears() ?>
-<?php $i=1; 
+<?php $collaborationYears = $collaboration->getCollaborationYears(); 
+      $row = 1 ; ?>
+<tr class='record <?php if (fmod(++$row, 2) ) : ?>even-record <?php endif;?>  '> 
+<?php $col=0; 
   foreach ($collaborationYears as $cy ): 
 ?>
-<tr class='record <?php if (fmod(++$i, 2) ) : ?>even-record <?php endif;?>  '> 
       <td><?php  echo $cy->getYear(); ?></td>
-  </tr>
+<? if (!fmod(++$col, 5) ) : ?> </tr><tr class='record <?php if (fmod(++$row, 2) ) : ?>even-record <?php endif;?>  '>
+<?php endif;?>
 <?php  endforeach; ?>
+  </tr>
 </tbody>
 </table>
 </td>

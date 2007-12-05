@@ -6,7 +6,7 @@ all:
       host: localhost
       database: isern_production
       username: isern
-      password: asdfljkljohnson
+      password: johnson
 dev:
   propel:
     class:      sfPropelDatabase
