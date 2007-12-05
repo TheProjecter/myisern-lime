@@ -51,8 +51,6 @@ Symfony needs to write to write to directories "log" and "cache." You will need 
 
 {{{
 mkdir cache log
-sudo chown www-data:www-data cache log
-## Or altenatively, you can do:
 chmod 777 cache log
 }}}
 
