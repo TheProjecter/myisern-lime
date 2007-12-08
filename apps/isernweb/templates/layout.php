@@ -14,10 +14,10 @@
 <div id='header'>
              <ul class='menu'>
 
-                        <li><? echo link_to('Researchers', 'researcher/list') ?> </li>
-                        <li><? echo link_to('Organizations', 'organization/list') ?> </li>
-                        <li><? echo link_to('Collaborations', 'collaboration/list') ?></li>
-                        <li><? echo link_to('Logout', 'user/logout') ?></li>                        
+                        <li><?php echo link_to('Researchers', 'researcher/list') ?> </li>
+                        <li><?php echo link_to('Organizations', 'organization/list') ?> </li>
+                        <li><?php echo link_to('Collaborations', 'collaboration/list') ?></li>
+                        <li><?php echo link_to('Logout', 'user/logout') ?></li>                        
                 </ul>
 </div>
 
