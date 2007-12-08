@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Researchers><Researcher><Name>My New Researcher</Name></Researcher><Researcher><Name>Marvin Zelkowitz</Name><Organization>University of Maryland</Organization><Email>mvz@cs.umd.edu</Email><Picture-Link>http://www.cs.umd.edu/~mvz/mvz-2006.jpg</Picture-Link><Bio-Statement>
+      Marv Zelkowitz is a Professor of Computer Science at the University of Maryland. 
+  </Bio-Statement></Researcher><Researcher><Name>Philip Johnson</Name><Organization>University of Hawaii</Organization><Email>johnson@hawaii.edu</Email><Picture-Link>http://csdl.ics.hawaii.edu/~csdl/Pictures/PhilipJohnson.jpg</Picture-Link><Bio-Statement>
+      Philip Johnson is a Professor of Information and Computer Sciences at the University of Hawaii.
+    </Bio-Statement></Researcher><Researcher><Name>Victor Basili</Name><Organization>University of Maryland</Organization><Email>basili@cs.umd.edu</Email><Picture-Link>http://www.cs.umd.edu/~basili/Smiling%20Vic.JPG</Picture-Link><Bio-Statement>
+      Victor Basili is a Professor of Computer Science at the University of Maryland. 
+    </Bio-Statement></Researcher></Researchers>

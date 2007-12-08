@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Organizations>
+	<Organization>
+		<Name>National Research Council Canada</Name>
+		<Type>Industry</Type>
+		<Contact>Janice Singer</Contact>
+		<Affiliated-Researchers />
+		<Country>Canada</Country>
+		<Research-Keywords>
+			<Research-Keyword>Design Methodology</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			Main empirical research areas: empirical study design and methodology, workplace evaluation of tools/processes, research ethics, cognitive requirements of software engineering, collaborative software engineering, work practices of software engineers using modeling languages
+		</Research-Description>
+		<Home-Page>http://iit-iti.nrc-cnrc.gc.ca/personnel/singer_janice_e.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Avaya Labs Research</Name>
+		<Type>Industry</Type>
+		<Contact>Audris Mockus</Contact>
+		<Affiliated-Researchers />
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword>Open Source Software Process</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			Main empirical research areas: analysis of software change repositories, evaluating open source software process, distributed development and organizational interdependencies, prediction of software quality as perceived by end users
+		</Research-Description>
+		<Home-Page>http://www.research.avayalabs.com/gcm/usa/en-us/people/all/mockus.htm</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Carnegie Mellon University</Name>
+		<Type>Academic</Type>
+		<Contact>David Zubrow</Contact>
+		<Affiliated-Researchers />
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword>Software Engineering</Research-Keyword>
+			<Research-Keyword>Measurement</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			Management of the Software Engineering Measurement and Analysis initiative.
+		</Research-Description>
+		<Home-Page>http://www.sei.cmu.edu/staff/dz/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Stevens Institute of Technology</Name>
+		<Type>Academic</Type>
+		<Contact>David Klappholz</Contact>
+		<Affiliated-Researchers />
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword>Software Engineering</Research-Keyword>
+			<Research-Keyword>Software Development Process</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			My current research interest is in the field of Software Engineering, that is the software development process that must accompany technology expertise to produce reliable, secure software products.
+		</Research-Description>
+		<Home-Page>http://www.cs.stevens.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Hawaii</Name>
+		<Type>Academic</Type>
+		<Contact>Philip Johnson</Contact>
+		<Affiliated-Researchers />
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword>Software Engineering</Research-Keyword>
+			<Research-Keyword>Measurement</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			The Collaborative Software Development Laboratory does
+			research on software measurement.
+		</Research-Description>
+		<Home-Page>http://csdl.ics.hawaii.edu</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Maryland</Name>
+		<Type>Academic</Type>
+		<Contact>Victor Basili</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher>
+				Marvin Zelkowitz
+			</Affiliated-Researcher>
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword>Software Engineering</Research-Keyword>
+			<Research-Keyword>Measurement</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			The University of Maryland software engineering group does
+			great stuff.
+		</Research-Description>
+		<Home-Page>http://cs.umd.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Blekinge Institute of Technology, Sweden</Name>
+		<Type>Academia</Type>
+		<Contact>Claes Wohlin</Contact>
+		<Affiliated-Researchers />
+		<Country>Sweden</Country>
+		<Research-Keywords>
+			<Research-Keyword>
+				applied signal processing
+			</Research-Keyword>
+			<Research-Keyword>
+				business administration and economics
+			</Research-Keyword>
+			<Research-Keyword>
+				caring and nursing science
+			</Research-Keyword>
+			<Research-Keyword>computer science</Research-Keyword>
+			<Research-Keyword>
+				computer system engineering
+			</Research-Keyword>
+			<Research-Keyword>human work science</Research-Keyword>
+			<Research-Keyword>interaction design</Research-Keyword>
+			<Research-Keyword>
+				mathematics and statistics
+			</Research-Keyword>
+			<Research-Keyword>mechanical engineering</Research-Keyword>
+			<Research-Keyword>radio communication</Research-Keyword>
+			<Research-Keyword>software engineering</Research-Keyword>
+			<Research-Keyword>
+				spatial development and planning
+			</Research-Keyword>
+			<Research-Keyword>technoscience studies</Research-Keyword>
+			<Research-Keyword>
+				telecommunication systems
+			</Research-Keyword>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description>
+			applied IT and sustainable development
+		</Research-Description>
+		<Home-Page>http://www.bth.se/eng/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>COPPE</Name>
+		<Type>Academia</Type>
+		<Contact>Guilherme Horta Travassos</Contact>
+		<Affiliated-Researchers />
+		<Country>Brazil</Country>
+		<Research-Keywords>
+			<Research-Keyword>biomedical</Research-Keyword>
+			<Research-Keyword>chemical</Research-Keyword>
+			<Research-Keyword>civil engineering</Research-Keyword>
+			<Research-Keyword>electrical engineering</Research-Keyword>
+			<Research-Keyword>energy planning</Research-Keyword>
+			<Research-Keyword>mechanical engineering</Research-Keyword>
+			<Research-Keyword>
+				metallurgical and materials
+			</Research-Keyword>
+			<Research-Keyword>nuclear</Research-Keyword>
+			<Research-Keyword>ocean</Research-Keyword>
+			<Research-Keyword>production</Research-Keyword>
+			<Research-Keyword>systems and computer</Research-Keyword>
+			<Research-Keyword>transport</Research-Keyword>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description>
+			sciences and engineering
+		</Research-Description>
+		<Home-Page>http://www.bth.se/eng/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Fraunhofer Center - Maryland</Name>
+		<Type>Academia</Type>
+		<Contact>Marvin Zelkowitz</Contact>
+		<Affiliated-Researchers />
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://fc-md.umd.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>
+			Fraunhofer Institute for Experimental Software Engineering
+		</Name>
+		<Type>Academia</Type>
+		<Contact>Andreas Jedlitschka</Contact>
+		<Affiliated-Researchers />
+		<Country>Germany</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.iese.fraunhofer.de/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>
+			Helsinki University of Technology Software Business	Laboratory
+		</Name>
+		<Type>Academia</Type>
+		<Contact>Jyrki Kontio</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher>Markus M. Makela</Affiliated-Researcher>
+		</Affiliated-Researchers>
+		<Country>Finland</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.sbl.tkk.fi/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Japan Manned Space Systems Corporation</Name>
+		<Type>Industry</Type>
+		<Contact>Haruka Nakao</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Japan</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.jamss.co.jp/ehtml/index.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Japan Aerospace Exploration Agency</Name>
+		<Type>Industry</Type>
+		<Contact>Masafumi Katahira</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Japan</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.jaxa.jp/index_e.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Lucent Technologies - Bell Laboratories</Name>
+		<Type>Industry</Type>
+		<Contact />
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>
+			http://www.alcatel-lucent.com/wps/portal/BellLabs
+		</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Lund University, Sweden</Name>
+		<Type>Academia</Type>
+		<Contact>Martin Hoest</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Sweden</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.tts.lth.se/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Microsoft Research</Name>
+		<Type>Industry</Type>
+		<Contact>Nachiappan Nagappan</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>
+			http://research.microsoft.com/users/nachin/
+		</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Mississippi State University</Name>
+		<Type>Academia</Type>
+		<Contact>Jeff Carver</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.cse.msstate.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Nara Institute of Science and Technology</Name>
+		<Type>Academia</Type>
+		<Contact>Koji Torii</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Japan</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://isw3.aist-nara.ac.jp/home-en.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>North Carolina State University</Name>
+		<Type>Academia</Type>
+		<Contact>Laurie Williams</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.ncsu.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Northrop Grumman</Name>
+		<Type>Industry</Type>
+		<Contact>Richard W. Selby</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.northropgrumman.com/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>NRC Institute for Information Technology</Name>
+		<Type>Academia</Type>
+		<Contact>Hakan Erdogmus</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Canada</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>
+			http://iit-iti.nrc-cnrc.gc.ca/iit-personnel-iti/seg-ggl_e.html
+		</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Norwegian University of Science and Technology</Name>
+		<Type>Academia</Type>
+		<Contact>Reidar Conradi</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Norway</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.idt.unit.no/IDT/idt-eng.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>NTT Data Corporation</Name>
+		<Type>Industry</Type>
+		<Contact>Takeshi Hayama</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Japan</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.nttdata.co.jp/index_e.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Osaka University</Name>
+		<Type>Academia</Type>
+		<Contact>Shinji Kusumoto</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Japan</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.osaka-u.ac.jp/eng/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>SINTEF Telecom and Informatics</Name>
+		<Type>Industry</Type>
+		<Contact>Tore Dyba</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Norway</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.sintef.no/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Sun Microsystems Inc.</Name>
+		<Type>Industry</Type>
+		<Contact>Larry Votta</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.sun.com</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Alberta</Name>
+		<Type>Academia</Type>
+		<Contact>James Miller</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Canada</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.ualberta.ca/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Bari, Italy</Name>
+		<Type>Academia</Type>
+		<Contact>Giuseppe Visaggio</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Italy</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://seldi2.uniba.it:1025/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Castilla-La Mancha</Name>
+		<Type>Academia</Type>
+		<Contact>Marcela Genero</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Spain</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.uclm.es/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Kaiserslautern</Name>
+		<Type>Academia</Type>
+		<Contact>Dieter Rombach</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Germany</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.uni-kl.de/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Universidad Politecnica Madrid</Name>
+		<Type>Academia</Type>
+		<Contact>Natalia Juristo</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Spain</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.upm.es/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Maryland, Baltimore</Name>
+		<Type>Academia</Type>
+		<Contact>Carolyn Seaman</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.umbc.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of New South Wales</Name>
+		<Type>Academia</Type>
+		<Contact>Ross Jeffery</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Australia</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.unsw.edu.au/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Oslo</Name>
+		<Type>Academia</Type>
+		<Contact>Dag Sjoberg</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Norway</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.uio.no/english/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Oulu</Name>
+		<Type>Academia</Type>
+		<Contact>Markku Oivo</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Finland</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.tol.oulu.fi/english/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Rome</Name>
+		<Type>Academia</Type>
+		<Contact>Giovanni Cantone</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Italy</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.disp.utovrm.it/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Sao Paulo - Campus of Sao Carlos</Name>
+		<Type>Academia</Type>
+		<Contact>Jose Carlos Maldonado</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Brazil</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.sc.usp.br/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Sheffield</Name>
+		<Type>Academia</Type>
+		<Contact>Tony Cowling</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>United Kingdom</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>
+			http://www.dcs.shef.ac.uk/cgi-bin/makeperson?ajc
+		</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Southern California</Name>
+		<Type>Academia</Type>
+		<Contact>Barry Boehm</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>USA</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.usc.edu/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Strathclyde</Name>
+		<Type>Academia</Type>
+		<Contact>Murray Wood</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Scotland</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://local.cis.strath.ac.uk/index.html</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University of Technology, Sydney</Name>
+		<Type>Academia</Type>
+		<Contact>Bernard Wong</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Australia</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.uts.edu.au/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>University Politechnico di Torino</Name>
+		<Type>Academia</Type>
+		<Contact>Maurizio Morisio</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Italy</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.polito.it/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Polytechnic University of Valencia</Name>
+		<Type>Academia</Type>
+		<Contact>Oscar Pastor</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Spain</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>
+			http://oomethod.dsic.upv.es/anonimo/index.aspx
+		</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Vienna University of Technology</Name>
+		<Type>Academia</Type>
+		<Contact>Stefan Biffl</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher />
+		</Affiliated-Researchers>
+		<Country>Austria</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.tuwien.ac.at/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>VTT Technical Research Centre of Finland</Name>
+		<Type>Industry</Type>
+		<Contact>Pekka Abrahamsson</Contact>
+		<Affiliated-Researchers>
+			<Affiliated-Researcher>Seija Komi-Sirvio</Affiliated-Researcher>
+		</Affiliated-Researchers>
+		<Country>Finland</Country>
+		<Research-Keywords>
+			<Research-Keyword />
+		</Research-Keywords>
+		<Research-Description />
+		<Home-Page>http://www.ele.vtt.fi/</Home-Page>
+	</Organization>
+	<Organization>
+		<Name>Simula Research Laboratory</Name>
+		<Type>Industry</Type>
+		<Contact>Dag Sjoberg</Contact>
+		<Affiliated-Researchers />
+		<Country>Norway</Country>
+		<Research-Keywords>
+			<Research-Keyword>
+				software process improvement
+			</Research-Keyword>
+			<Research-Keyword>
+				software effort estimation
+			</Research-Keyword>
+		</Research-Keywords>
+		<Research-Description>
+			research methods and apparatus for empirical studies,
+			software process inprovement, software effort estimation,
+			object-oriented analysis and design
+		</Research-Description>
+		<Home-Page>http://www.simula.no/</Home-Page>
+	</Organization>
+</Organizations>
