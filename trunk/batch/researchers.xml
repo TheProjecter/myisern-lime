@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Researchers>
+	<Researcher>
+		<Name>Janice Singer</Name>
+		<Organization>National Research Council Canada</Organization>
+		<Email>Janice.Singer@nrc-cnrc.gc.ca</Email>
+		<Picture-Link>http://iit-iti.nrc-cnrc.gc.ca/images/people/singer_janice.gif</Picture-Link>
+		<Bio-Statement>
+			Main empirical research areas: empirical study design and methodology, workplace evaluation of tools/processes, research ethics, cognitive requirements of software engineering, collaborative software engineering, work practices of software engineers using modeling languages
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Audris Mockus</Name>
+		<Organization>Avaya Labs Research</Organization>
+		<Email>audris@avaya.com</Email>
+		<Picture-Link>
+		</Picture-Link>
+		<Bio-Statement>
+			Main empirical research areas: analysis of software change repositories, evaluating open source software process, distributed development and organizational interdependencies, prediction of software quality as perceived by end users
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>David Klappholz</Name>
+		<Organization>Stevens Institute of Technology</Organization>
+		<Email>d.klappholz@worldnet.att.net</Email>
+		<Picture-Link>
+			http://www.cs.stevens.edu/content_images/faculty/CS/David_Klappholz.jpg
+		</Picture-Link>
+		<Bio-Statement>
+			Main empirical research areas: assessment of SE education, critical factors for software adoption, design metrics
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>David Zubrow</Name>
+		<Organization>Carnegie Mellon University</Organization>
+		<Email>dz@sei.cmu.edu</Email>
+		<Picture-Link>
+			http://www.sei.cmu.edu/staff/dz/dz.gif
+		</Picture-Link>
+		<Bio-Statement>
+			Main empirical research areas: risk identification and cost estimation for System of System Integration efforts, measuring the impacts of model-based engineering process improvement programs, empirical validation of software product quality measures, additional research conducted by other areas of the SEI
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Philip Johnson</Name>
+		<Organization>University of Hawaii</Organization>
+		<Email>johnson@hawaii.edu</Email>
+		<Picture-Link>
+			http://csdl.ics.hawaii.edu/~csdl/Pictures/PhilipJohnson.jpg
+		</Picture-Link>
+		<Bio-Statement>
+			Philip Johnson is a Professor of Information and Computer
+			Sciences at the University of Hawaii.
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Victor Basili</Name>
+		<Organization>University of Maryland</Organization>
+		<Email>basili@cs.umd.edu</Email>
+		<Picture-Link>
+			http://www.cs.umd.edu/~basili/Smiling%20Vic.JPG
+		</Picture-Link>
+		<Bio-Statement>
+			Victor Basili is a Professor of Computer Science at the
+			University of Maryland.
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Mike Barker</Name>
+		<Organization>
+			Nara Institute of Science and Technology
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/barker_mike.png</Picture-Link>
+		<Bio-Statement>Visiting Scholar</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Giovanni Cantone</Name>
+		<Organization>University of Rome</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/cantone_giovanni.png</Picture-Link>
+		<Bio-Statement>
+			Professor of Experimental Informatics
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Marcus Ciolkowski</Name>
+		<Organization>University of Kaiserslautern</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/ciolkowski_marcus.png</Picture-Link>
+		<Bio-Statement>Researcher</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Lorin Hochstein</Name>
+		<Organization>University of Maryland</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/hochstein_lorin.png</Picture-Link>
+		<Bio-Statement>Graduate Research Assistant</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Ida Hogganvik</Name>
+		<Organization>SINTEF Telecom and Informatics</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/hogganivik_ida.png</Picture-Link>
+		<Bio-Statement>Research fellow</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Andreas Jedlitschka</Name>
+		<Organization>
+			Fraunhofer Institute for Experimental Software Engineering
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/jedlitschka_andreas.png</Picture-Link>
+		<Bio-Statement>Scientist</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Natalia Juristo</Name>
+		<Organization>Universidad Politecnica Madrid</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/juristo_natalia.png</Picture-Link>
+		<Bio-Statement>Professor of the Computing School</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Seija Komi-Sirvio</Name>
+		<Organization>
+			VTT Technical Research Centre of Finland
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/komi-sirvio_seija.png</Picture-Link>
+		<Bio-Statement>Group Manager</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Shinji Kusumoto</Name>
+		<Organization>Osaka University</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/kusumoto_shinji.png</Picture-Link>
+		<Bio-Statement>Associate Professor</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Markus M. Makela</Name>
+		<Organization>
+			Helsinki University of Technology Software Business Laboratory
+		</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement>
+			Senior Researcher, Project Director
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Haruka Nakao</Name>
+		<Organization>
+			Japan Manned Space Systems Corporation
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/nakao_haruka</Picture-Link>
+		<Bio-Statement>Safety and Product assurance</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Daniel Port</Name>
+		<Organization>University of Hawaii</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/port_daniel.png</Picture-Link>
+		<Bio-Statement>
+			Asst. prof. of Information Technology Management
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Dieter Rombach</Name>
+		<Organization>University of Kaiserslautern</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/rombach_dieter.png</Picture-Link>
+		<Bio-Statement>
+			Head of Software Engineering Research Group
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Laurie Williams</Name>
+		<Organization>North Carolina State University</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/williams_laurie.png</Picture-Link>
+		<Bio-Statement>Assistant Professor</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Bernard Wong</Name>
+		<Organization>University of Technology, Sydney</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/wong_bernard.png</Picture-Link>
+		<Bio-Statement>Senior Lecturer</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Marvin V. Zelkowitz</Name>
+		<Organization>University of Maryland</Organization>
+		<Email />
+		<Picture-Link>http://www.cs.umd.edu/~mvz/mvz-2006.jpg</Picture-Link>
+		<Bio-Statement>Professor of Computer Science</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Oscar Pastor</Name>
+		<Organization>Polytechnic University of Valencia</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/pastor_oscar.png</Picture-Link>
+		<Bio-Statement>
+			Full Professor and the Leader of the OO-Method
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Kenichi Matsumoto</Name>
+		<Organization>
+			Nara Institute of Science and Technology
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/mastumoto_kenichi.png</Picture-Link>
+		<Bio-Statement>Professor</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Martin Hoest</Name>
+		<Organization>Lund University, Sweden</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/hoest_martin.png</Picture-Link>
+		<Bio-Statement>Associate Professor</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Lawrence G. Votta</Name>
+		<Organization>Sun Microsystems Inc.</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/votta_lawrence.png</Picture-Link>
+		<Bio-Statement>Distinguished Engineer</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Naoki Ishihama</Name>
+		<Organization>Japan Aerospace Exploration Agency</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/ishihama_naoki.png</Picture-Link>
+		<Bio-Statement>Software Engineer</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Silvia Mara Abrahao</Name>
+		<Organization>Polytechnic University of Valencia</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/mara_abrahao_silvia.png</Picture-Link>
+		<Bio-Statement>Assistant Professor</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Odd Petter N. Slyngstad</Name>
+		<Organization>
+			Norwegian University of Science and Technology
+		</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement>Research Assistant</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Takeshi Hayama</Name>
+		<Organization>NTT Data Corporation</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/hayama_takeshi.png</Picture-Link>
+		<Bio-Statement>
+			Senior Manager, Quality Assurance Department
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Misa Fujinuki</Name>
+		<Organization>NTT DATA Corporation</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/fujinuki_misa.png</Picture-Link>
+		<Bio-Statement>
+			Senior Expert,Quality Assurance Department
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Giuseppe Visaggio</Name>
+		<Organization>University of Bari, Italy</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/visaggio_giuseppe.png</Picture-Link>a
+		<Bio-Statement>Professor of Software Engineering</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Claes Wohlin</Name>
+		<Organization>
+			Blekinge Institute of Technology, Sweden
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/wohlin_claes.png</Picture-Link>
+		<Bio-Statement>Professor of Software Engineering</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Ray Madachy</Name>
+		<Organization>University of Southern California</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/madachy_ray.png</Picture-Link>
+		<Bio-Statement>
+			Research Scientist and Adjunct Assistant Professor
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Forrest Shull</Name>
+		<Organization>Fraunhofer Center - Maryland</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/shull_forrest.png</Picture-Link>
+		<Bio-Statement>Scientist</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Pekka Abrahamsson</Name>
+		<Organization>
+			VTT Technical Research Centre of Finland
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/abrahamsson_pekka.png</Picture-Link>
+		<Bio-Statement>Senior Research Scientist</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Jyrki Kontio</Name>
+		<Organization>
+			Helsinki University of Technology Software Business	Laboratory
+		</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/kontio_jyrki.png</Picture-Link>
+		<Bio-Statement>
+			Professor of Software Product Business
+		</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Masafumi Katahira</Name>
+		<Organization>Japan Aerospace Exploration Agency</Organization>
+	</Researcher>
+	<Researcher>
+		<Name>Nachiappan Nagappan</Name>
+		<Organization>Microsoft Research</Organization>
+	</Researcher>
+	<Researcher>
+		<Name>Jeff Carver</Name>
+		<Organization>Mississippi State University</Organization>
+	</Researcher>
+	<Researcher>
+		<Name>Koji Torii</Name>
+		<Organization>
+			Nara Institute of Science and Technology
+		</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Richard W. Selby</Name>
+		<Organization>Northrop Grumman</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Hakan Erdogmus</Name>
+		<Organization>
+			NRC Institute for Information Technology
+		</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Reidar Conradi</Name>
+		<Organization>
+			Norwegian University of Science and Technology
+		</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Tore Dyba</Name>
+		<Organization>SINTEF Telecom and Informatics</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/dyba_tore.png</Picture-Link>
+		<Bio-Statement>Chief Scientist</Bio-Statement>
+	</Researcher>
+	<Researcher>
+		<Name>Larry Votta</Name>
+		<Organization>Sun Microsystems Inc.</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>James Miller</Name>
+		<Organization>University of Alberta</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Marcela Genero</Name>
+		<Organization>University of Castilla-La Mancha</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/genero_bocco_marcela.png</Picture-Link>
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Carolyn Seaman</Name>
+		<Organization>University of Maryland, Baltimore</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Dag Sjoberg</Name>
+		<Organization>University of Oslo</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/sjoberg_dag</Picture-Link>
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Markku Oivo</Name>
+		<Organization>University of Oulu</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Jose Carlos Maldonado</Name>
+		<Organization>
+			University of Sao Paulo - Campus of Sao Carlos
+		</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Tony Cowling</Name>
+		<Organization>University of Sheffield</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Barry Boehm</Name>
+		<Organization>University of Southern California</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Murray Wood</Name>
+		<Organization>University of Strathclyde</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Maurizio Morisio</Name>
+		<Organization>University Politechnico di Torino</Organization>
+		<Email />
+		<Picture-Link />
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Stefan Biffl</Name>
+		<Organization>Vienna University of Technology</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/biffl_stefan.png</Picture-Link>
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Guilherme Horta Travassos</Name>
+		<Organization>COPPE</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/horta_travassos_guilherme.png</Picture-Link>
+		<Bio-Statement />
+	</Researcher>
+	<Researcher>
+		<Name>Ross Jeffery</Name>
+		<Organization>University of New South Wales</Organization>
+		<Email />
+		<Picture-Link>http://myisern-1-purple-svn.googlegroups.com/web/jeffery_ross.png</Picture-Link>
+		<Bio-Statement />
+	</Researcher>
+</Researchers>
