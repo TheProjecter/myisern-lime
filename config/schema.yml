@@ -47,3 +47,24 @@ propel:
     password: 
       type: VARCHAR
       size: 50
+  isern_collaboration_outcome_types:
+    _attributes: { phpName: CollaborationOutcomeType }
+    id:
+    collaboration_id:
+    outcome_type: 
+      type: VARCHAR
+      size: 50
+  isern_organization_researcher_keywords:
+    _attributes: { phpName: OrganizationResearcherKeyword }
+    id:
+    organization_id:
+    keyword: 
+      type: VARCHAR
+      size: 50
+  isern_collaboration_types:
+    _attributes: { phpName: CollaborationType }
+    id:
+    collaboration_id:
+    collaboration_type: 
+      type: VARCHAR
+      size: 50

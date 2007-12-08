@@ -32,6 +32,18 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 	protected $lastCollaboratingOrganizationCriteria = null;
 
 	
+	protected $collCollaborationOutcomeTypes;
+
+	
+	protected $lastCollaborationOutcomeTypeCriteria = null;
+
+	
+	protected $collCollaborationTypes;
+
+	
+	protected $lastCollaborationTypeCriteria = null;
+
+	
 	protected $alreadyInSave = false;
 
 	
@@ -205,6 +217,22 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 				}
 			}
 
+			if ($this->collCollaborationOutcomeTypes !== null) {
+				foreach($this->collCollaborationOutcomeTypes as $referrerFK) {
+					if (!$referrerFK->isDeleted()) {
+						$affectedRows += $referrerFK->save($con);
+					}
+				}
+			}
+
+			if ($this->collCollaborationTypes !== null) {
+				foreach($this->collCollaborationTypes as $referrerFK) {
+					if (!$referrerFK->isDeleted()) {
+						$affectedRows += $referrerFK->save($con);
+					}
+				}
+			}
+
 			$this->alreadyInSave = false;
 		}
 		return $affectedRows;
@@ -256,6 +284,22 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 
 				if ($this->collCollaboratingOrganizations !== null) {
 					foreach($this->collCollaboratingOrganizations as $referrerFK) {
+						if (!$referrerFK->validate($columns)) {
+							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+						}
+					}
+				}
+
+				if ($this->collCollaborationOutcomeTypes !== null) {
+					foreach($this->collCollaborationOutcomeTypes as $referrerFK) {
+						if (!$referrerFK->validate($columns)) {
+							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+						}
+					}
+				}
+
+				if ($this->collCollaborationTypes !== null) {
+					foreach($this->collCollaborationTypes as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
@@ -390,6 +434,14 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 
 			foreach($this->getCollaboratingOrganizations() as $relObj) {
 				$copyObj->addCollaboratingOrganization($relObj->copy($deepCopy));
+			}
+
+			foreach($this->getCollaborationOutcomeTypes() as $relObj) {
+				$copyObj->addCollaborationOutcomeType($relObj->copy($deepCopy));
+			}
+
+			foreach($this->getCollaborationTypes() as $relObj) {
+				$copyObj->addCollaborationType($relObj->copy($deepCopy));
 			}
 
 		} 
@@ -590,6 +642,146 @@ abstract class BaseCollaboration extends BaseObject  implements Persistent {
 		$this->lastCollaboratingOrganizationCriteria = $criteria;
 
 		return $this->collCollaboratingOrganizations;
+	}
+
+	
+	public function initCollaborationOutcomeTypes()
+	{
+		if ($this->collCollaborationOutcomeTypes === null) {
+			$this->collCollaborationOutcomeTypes = array();
+		}
+	}
+
+	
+	public function getCollaborationOutcomeTypes($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaborationOutcomeTypePeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collCollaborationOutcomeTypes === null) {
+			if ($this->isNew()) {
+			   $this->collCollaborationOutcomeTypes = array();
+			} else {
+
+				$criteria->add(CollaborationOutcomeTypePeer::COLLABORATION_ID, $this->getId());
+
+				CollaborationOutcomeTypePeer::addSelectColumns($criteria);
+				$this->collCollaborationOutcomeTypes = CollaborationOutcomeTypePeer::doSelect($criteria, $con);
+			}
+		} else {
+						if (!$this->isNew()) {
+												
+
+				$criteria->add(CollaborationOutcomeTypePeer::COLLABORATION_ID, $this->getId());
+
+				CollaborationOutcomeTypePeer::addSelectColumns($criteria);
+				if (!isset($this->lastCollaborationOutcomeTypeCriteria) || !$this->lastCollaborationOutcomeTypeCriteria->equals($criteria)) {
+					$this->collCollaborationOutcomeTypes = CollaborationOutcomeTypePeer::doSelect($criteria, $con);
+				}
+			}
+		}
+		$this->lastCollaborationOutcomeTypeCriteria = $criteria;
+		return $this->collCollaborationOutcomeTypes;
+	}
+
+	
+	public function countCollaborationOutcomeTypes($criteria = null, $distinct = false, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaborationOutcomeTypePeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		$criteria->add(CollaborationOutcomeTypePeer::COLLABORATION_ID, $this->getId());
+
+		return CollaborationOutcomeTypePeer::doCount($criteria, $distinct, $con);
+	}
+
+	
+	public function addCollaborationOutcomeType(CollaborationOutcomeType $l)
+	{
+		$this->collCollaborationOutcomeTypes[] = $l;
+		$l->setCollaboration($this);
+	}
+
+	
+	public function initCollaborationTypes()
+	{
+		if ($this->collCollaborationTypes === null) {
+			$this->collCollaborationTypes = array();
+		}
+	}
+
+	
+	public function getCollaborationTypes($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaborationTypePeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collCollaborationTypes === null) {
+			if ($this->isNew()) {
+			   $this->collCollaborationTypes = array();
+			} else {
+
+				$criteria->add(CollaborationTypePeer::COLLABORATION_ID, $this->getId());
+
+				CollaborationTypePeer::addSelectColumns($criteria);
+				$this->collCollaborationTypes = CollaborationTypePeer::doSelect($criteria, $con);
+			}
+		} else {
+						if (!$this->isNew()) {
+												
+
+				$criteria->add(CollaborationTypePeer::COLLABORATION_ID, $this->getId());
+
+				CollaborationTypePeer::addSelectColumns($criteria);
+				if (!isset($this->lastCollaborationTypeCriteria) || !$this->lastCollaborationTypeCriteria->equals($criteria)) {
+					$this->collCollaborationTypes = CollaborationTypePeer::doSelect($criteria, $con);
+				}
+			}
+		}
+		$this->lastCollaborationTypeCriteria = $criteria;
+		return $this->collCollaborationTypes;
+	}
+
+	
+	public function countCollaborationTypes($criteria = null, $distinct = false, $con = null)
+	{
+				include_once 'lib/model/om/BaseCollaborationTypePeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		$criteria->add(CollaborationTypePeer::COLLABORATION_ID, $this->getId());
+
+		return CollaborationTypePeer::doCount($criteria, $distinct, $con);
+	}
+
+	
+	public function addCollaborationType(CollaborationType $l)
+	{
+		$this->collCollaborationTypes[] = $l;
+		$l->setCollaboration($this);
 	}
 
 } 

@@ -1,7 +1,7 @@
 <?php
 
 
-abstract class BaseCollaboratingOrganizations extends BaseObject  implements Persistent {
+abstract class BaseCollaborationOutcomeType extends BaseObject  implements Persistent {
 
 
 	
@@ -17,13 +17,10 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 
 
 	
-	protected $organization_id;
+	protected $outcome_type;
 
 	
 	protected $aCollaboration;
-
-	
-	protected $aOrganization;
 
 	
 	protected $alreadyInSave = false;
@@ -46,23 +43,25 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	}
 
 	
-	public function getOrganizationId()
+	public function getOutcomeType()
 	{
 
-		return $this->organization_id;
+		return $this->outcome_type;
 	}
 
 	
 	public function setId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
 		if ($this->id !== $v) {
 			$this->id = $v;
-			$this->modifiedColumns[] = CollaboratingOrganizationsPeer::ID;
+			$this->modifiedColumns[] = CollaborationOutcomeTypePeer::ID;
 		}
 
 	} 
@@ -70,13 +69,15 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	public function setCollaborationId($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
+		
+		
+		if ($v !== null && !is_int($v) && is_numeric($v)) {
 			$v = (int) $v;
 		}
 
 		if ($this->collaboration_id !== $v) {
 			$this->collaboration_id = $v;
-			$this->modifiedColumns[] = CollaboratingOrganizationsPeer::COLLABORATION_ID;
+			$this->modifiedColumns[] = CollaborationOutcomeTypePeer::COLLABORATION_ID;
 		}
 
 		if ($this->aCollaboration !== null && $this->aCollaboration->getId() !== $v) {
@@ -85,20 +86,18 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 
 	} 
 	
-	public function setOrganizationId($v)
+	public function setOutcomeType($v)
 	{
 
-						if ($v !== null && !is_int($v) && is_numeric($v)) {
-			$v = (int) $v;
+		
+		
+		if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
 		}
 
-		if ($this->organization_id !== $v) {
-			$this->organization_id = $v;
-			$this->modifiedColumns[] = CollaboratingOrganizationsPeer::ORGANIZATION_ID;
-		}
-
-		if ($this->aOrganization !== null && $this->aOrganization->getId() !== $v) {
-			$this->aOrganization = null;
+		if ($this->outcome_type !== $v) {
+			$this->outcome_type = $v;
+			$this->modifiedColumns[] = CollaborationOutcomeTypePeer::OUTCOME_TYPE;
 		}
 
 	} 
@@ -111,7 +110,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 
 			$this->collaboration_id = $rs->getInt($startcol + 1);
 
-			$this->organization_id = $rs->getInt($startcol + 2);
+			$this->outcome_type = $rs->getString($startcol + 2);
 
 			$this->resetModified();
 
@@ -119,7 +118,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 
 						return $startcol + 3; 
 		} catch (Exception $e) {
-			throw new PropelException("Error populating CollaboratingOrganizations object", $e);
+			throw new PropelException("Error populating CollaborationOutcomeType object", $e);
 		}
 	}
 
@@ -131,12 +130,12 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(CollaboratingOrganizationsPeer::DATABASE_NAME);
+			$con = Propel::getConnection(CollaborationOutcomeTypePeer::DATABASE_NAME);
 		}
 
 		try {
 			$con->begin();
-			CollaboratingOrganizationsPeer::doDelete($this, $con);
+			CollaborationOutcomeTypePeer::doDelete($this, $con);
 			$this->setDeleted(true);
 			$con->commit();
 		} catch (PropelException $e) {
@@ -153,7 +152,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(CollaboratingOrganizationsPeer::DATABASE_NAME);
+			$con = Propel::getConnection(CollaborationOutcomeTypePeer::DATABASE_NAME);
 		}
 
 		try {
@@ -182,22 +181,15 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 				$this->setCollaboration($this->aCollaboration);
 			}
 
-			if ($this->aOrganization !== null) {
-				if ($this->aOrganization->isModified()) {
-					$affectedRows += $this->aOrganization->save($con);
-				}
-				$this->setOrganization($this->aOrganization);
-			}
-
 
 						if ($this->isModified()) {
 				if ($this->isNew()) {
-					$pk = CollaboratingOrganizationsPeer::doInsert($this, $con);
+					$pk = CollaborationOutcomeTypePeer::doInsert($this, $con);
 					$affectedRows += 1; 										 										 
 					$this->setId($pk);  
 					$this->setNew(false);
 				} else {
-					$affectedRows += CollaboratingOrganizationsPeer::doUpdate($this, $con);
+					$affectedRows += CollaborationOutcomeTypePeer::doUpdate($this, $con);
 				}
 				$this->resetModified(); 			}
 
@@ -244,14 +236,8 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 				}
 			}
 
-			if ($this->aOrganization !== null) {
-				if (!$this->aOrganization->validate($columns)) {
-					$failureMap = array_merge($failureMap, $this->aOrganization->getValidationFailures());
-				}
-			}
 
-
-			if (($retval = CollaboratingOrganizationsPeer::doValidate($this, $columns)) !== true) {
+			if (($retval = CollaborationOutcomeTypePeer::doValidate($this, $columns)) !== true) {
 				$failureMap = array_merge($failureMap, $retval);
 			}
 
@@ -266,7 +252,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	
 	public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = CollaboratingOrganizationsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = CollaborationOutcomeTypePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		return $this->getByPosition($pos);
 	}
 
@@ -281,7 +267,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 				return $this->getCollaborationId();
 				break;
 			case 2:
-				return $this->getOrganizationId();
+				return $this->getOutcomeType();
 				break;
 			default:
 				return null;
@@ -291,11 +277,11 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	
 	public function toArray($keyType = BasePeer::TYPE_PHPNAME)
 	{
-		$keys = CollaboratingOrganizationsPeer::getFieldNames($keyType);
+		$keys = CollaborationOutcomeTypePeer::getFieldNames($keyType);
 		$result = array(
 			$keys[0] => $this->getId(),
 			$keys[1] => $this->getCollaborationId(),
-			$keys[2] => $this->getOrganizationId(),
+			$keys[2] => $this->getOutcomeType(),
 		);
 		return $result;
 	}
@@ -303,7 +289,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	
 	public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = CollaboratingOrganizationsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = CollaborationOutcomeTypePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		return $this->setByPosition($pos, $value);
 	}
 
@@ -318,28 +304,28 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 				$this->setCollaborationId($value);
 				break;
 			case 2:
-				$this->setOrganizationId($value);
+				$this->setOutcomeType($value);
 				break;
 		} 	}
 
 	
 	public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
 	{
-		$keys = CollaboratingOrganizationsPeer::getFieldNames($keyType);
+		$keys = CollaborationOutcomeTypePeer::getFieldNames($keyType);
 
 		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
 		if (array_key_exists($keys[1], $arr)) $this->setCollaborationId($arr[$keys[1]]);
-		if (array_key_exists($keys[2], $arr)) $this->setOrganizationId($arr[$keys[2]]);
+		if (array_key_exists($keys[2], $arr)) $this->setOutcomeType($arr[$keys[2]]);
 	}
 
 	
 	public function buildCriteria()
 	{
-		$criteria = new Criteria(CollaboratingOrganizationsPeer::DATABASE_NAME);
+		$criteria = new Criteria(CollaborationOutcomeTypePeer::DATABASE_NAME);
 
-		if ($this->isColumnModified(CollaboratingOrganizationsPeer::ID)) $criteria->add(CollaboratingOrganizationsPeer::ID, $this->id);
-		if ($this->isColumnModified(CollaboratingOrganizationsPeer::COLLABORATION_ID)) $criteria->add(CollaboratingOrganizationsPeer::COLLABORATION_ID, $this->collaboration_id);
-		if ($this->isColumnModified(CollaboratingOrganizationsPeer::ORGANIZATION_ID)) $criteria->add(CollaboratingOrganizationsPeer::ORGANIZATION_ID, $this->organization_id);
+		if ($this->isColumnModified(CollaborationOutcomeTypePeer::ID)) $criteria->add(CollaborationOutcomeTypePeer::ID, $this->id);
+		if ($this->isColumnModified(CollaborationOutcomeTypePeer::COLLABORATION_ID)) $criteria->add(CollaborationOutcomeTypePeer::COLLABORATION_ID, $this->collaboration_id);
+		if ($this->isColumnModified(CollaborationOutcomeTypePeer::OUTCOME_TYPE)) $criteria->add(CollaborationOutcomeTypePeer::OUTCOME_TYPE, $this->outcome_type);
 
 		return $criteria;
 	}
@@ -347,9 +333,9 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	
 	public function buildPkeyCriteria()
 	{
-		$criteria = new Criteria(CollaboratingOrganizationsPeer::DATABASE_NAME);
+		$criteria = new Criteria(CollaborationOutcomeTypePeer::DATABASE_NAME);
 
-		$criteria->add(CollaboratingOrganizationsPeer::ID, $this->id);
+		$criteria->add(CollaborationOutcomeTypePeer::ID, $this->id);
 
 		return $criteria;
 	}
@@ -372,7 +358,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 
 		$copyObj->setCollaborationId($this->collaboration_id);
 
-		$copyObj->setOrganizationId($this->organization_id);
+		$copyObj->setOutcomeType($this->outcome_type);
 
 
 		$copyObj->setNew(true);
@@ -393,7 +379,7 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	public function getPeer()
 	{
 		if (self::$peer === null) {
-			self::$peer = new CollaboratingOrganizationsPeer();
+			self::$peer = new CollaborationOutcomeTypePeer();
 		}
 		return self::$peer;
 	}
@@ -417,45 +403,14 @@ abstract class BaseCollaboratingOrganizations extends BaseObject  implements Per
 	
 	public function getCollaboration($con = null)
 	{
-				include_once 'lib/model/om/BaseCollaborationPeer.php';
-
 		if ($this->aCollaboration === null && ($this->collaboration_id !== null)) {
+						include_once 'lib/model/om/BaseCollaborationPeer.php';
 
 			$this->aCollaboration = CollaborationPeer::retrieveByPK($this->collaboration_id, $con);
 
 			
 		}
 		return $this->aCollaboration;
-	}
-
-	
-	public function setOrganization($v)
-	{
-
-
-		if ($v === null) {
-			$this->setOrganizationId(NULL);
-		} else {
-			$this->setOrganizationId($v->getId());
-		}
-
-
-		$this->aOrganization = $v;
-	}
-
-
-	
-	public function getOrganization($con = null)
-	{
-				include_once 'lib/model/om/BaseOrganizationPeer.php';
-
-		if ($this->aOrganization === null && ($this->organization_id !== null)) {
-
-			$this->aOrganization = OrganizationPeer::retrieveByPK($this->organization_id, $con);
-
-			
-		}
-		return $this->aOrganization;
 	}
 
 } 

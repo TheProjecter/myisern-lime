@@ -55,6 +55,12 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 	protected $lastCollaboratingOrganizationCriteria = null;
 
 	
+	protected $collOrganizationResearcherKeywords;
+
+	
+	protected $lastOrganizationResearcherKeywordCriteria = null;
+
+	
 	protected $alreadyInSave = false;
 
 	
@@ -387,6 +393,14 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 				}
 			}
 
+			if ($this->collOrganizationResearcherKeywords !== null) {
+				foreach($this->collOrganizationResearcherKeywords as $referrerFK) {
+					if (!$referrerFK->isDeleted()) {
+						$affectedRows += $referrerFK->save($con);
+					}
+				}
+			}
+
 			$this->alreadyInSave = false;
 		}
 		return $affectedRows;
@@ -446,6 +460,14 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 
 				if ($this->collCollaboratingOrganizations !== null) {
 					foreach($this->collCollaboratingOrganizations as $referrerFK) {
+						if (!$referrerFK->validate($columns)) {
+							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+						}
+					}
+				}
+
+				if ($this->collOrganizationResearcherKeywords !== null) {
+					foreach($this->collOrganizationResearcherKeywords as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
@@ -635,6 +657,10 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 
 			foreach($this->getCollaboratingOrganizations() as $relObj) {
 				$copyObj->addCollaboratingOrganization($relObj->copy($deepCopy));
+			}
+
+			foreach($this->getOrganizationResearcherKeywords() as $relObj) {
+				$copyObj->addOrganizationResearcherKeyword($relObj->copy($deepCopy));
 			}
 
 		} 
@@ -864,6 +890,76 @@ abstract class BaseOrganization extends BaseObject  implements Persistent {
 		$this->lastCollaboratingOrganizationCriteria = $criteria;
 
 		return $this->collCollaboratingOrganizations;
+	}
+
+	
+	public function initOrganizationResearcherKeywords()
+	{
+		if ($this->collOrganizationResearcherKeywords === null) {
+			$this->collOrganizationResearcherKeywords = array();
+		}
+	}
+
+	
+	public function getOrganizationResearcherKeywords($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseOrganizationResearcherKeywordPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collOrganizationResearcherKeywords === null) {
+			if ($this->isNew()) {
+			   $this->collOrganizationResearcherKeywords = array();
+			} else {
+
+				$criteria->add(OrganizationResearcherKeywordPeer::ORGANIZATION_ID, $this->getId());
+
+				OrganizationResearcherKeywordPeer::addSelectColumns($criteria);
+				$this->collOrganizationResearcherKeywords = OrganizationResearcherKeywordPeer::doSelect($criteria, $con);
+			}
+		} else {
+						if (!$this->isNew()) {
+												
+
+				$criteria->add(OrganizationResearcherKeywordPeer::ORGANIZATION_ID, $this->getId());
+
+				OrganizationResearcherKeywordPeer::addSelectColumns($criteria);
+				if (!isset($this->lastOrganizationResearcherKeywordCriteria) || !$this->lastOrganizationResearcherKeywordCriteria->equals($criteria)) {
+					$this->collOrganizationResearcherKeywords = OrganizationResearcherKeywordPeer::doSelect($criteria, $con);
+				}
+			}
+		}
+		$this->lastOrganizationResearcherKeywordCriteria = $criteria;
+		return $this->collOrganizationResearcherKeywords;
+	}
+
+	
+	public function countOrganizationResearcherKeywords($criteria = null, $distinct = false, $con = null)
+	{
+				include_once 'lib/model/om/BaseOrganizationResearcherKeywordPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		$criteria->add(OrganizationResearcherKeywordPeer::ORGANIZATION_ID, $this->getId());
+
+		return OrganizationResearcherKeywordPeer::doCount($criteria, $distinct, $con);
+	}
+
+	
+	public function addOrganizationResearcherKeyword(OrganizationResearcherKeyword $l)
+	{
+		$this->collOrganizationResearcherKeywords[] = $l;
+		$l->setOrganization($this);
 	}
 
 } 

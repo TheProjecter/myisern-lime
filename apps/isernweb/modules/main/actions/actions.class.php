@@ -5,7 +5,7 @@
  *
  * @package    myisern-lime
  * @subpackage main
- * @author     Your name here
+ * @author     Kevin English
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class mainActions extends sfActions

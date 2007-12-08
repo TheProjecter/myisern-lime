@@ -12,7 +12,6 @@
   <th>Organization</th>
   <th>Email</th>
   <th>Picture link</th>
-  <th>Bio statement</th>
   <th>&nbsp;</th>    
 </tr>
 </thead>
@@ -25,8 +24,7 @@ foreach ($researchers as $researcher): ?>
       <td><?php echo link_to($researcher->getName(), 'researcher/show?id='.$researcher->getId()) ?></td>
       <td><?php echo $researcher->getOrganization() ?></td>
       <td><?php echo $researcher->getEmail() ?></td>
-      <td><?php echo $researcher->getPictureLink() ?></td>
-      <td><?php echo $researcher->getBioStatement() ?></td>
+      <td><?php if ($researcher->getPictureLink()) { echo link_to(basename($researcher->getPictureLink()),$researcher->getPictureLink());  } ?></td>
       <td><?php echo link_to("edit",'researcher/edit?id='.$researcher->getId()) ?>&nbsp;
           <?php echo link_to("delete",'researcher/delete?id='.$researcher->getId(), 
           			            array('confirm' => 'Are you sure?')) ?></td>          

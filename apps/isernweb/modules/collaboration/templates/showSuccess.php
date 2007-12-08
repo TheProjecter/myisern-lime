@@ -6,10 +6,6 @@
 <table>
 <tbody>
 <tr>
-<th>Id: </th>
-<td><?php echo $collaboration->getId() ?></td>
-</tr>
-<tr>
 <th>Name: </th>
 <td><?php echo $collaboration->getName() ?></td>
 </tr>
@@ -23,7 +19,61 @@
 
 <?php echo link_to('edit', 'collaboration/edit?id='.$collaboration->getId()) ?>
 &nbsp;<?php echo link_to('list', 'collaboration/list') ?>
-<table><tr><td valign='top'>
+<table><tr>
+<td>
+<h1>Outcome Types</h1>
+<table class='list'>
+<thead>
+<tr>
+  <th colspan=0>Outome</th>
+</tr>
+</thead>
+<tbody>
+<?php $collaborationYears = $collaboration->getCollaborationOutcomeTypes(); 
+      $row = 1 ; ?>
+ 
+<?php 
+ 
+  foreach ($collaborationYears as $cot ): 
+?>
+<tr class='record <?php if (fmod(++$row, 2) ) : ?>even-record <?php endif;?>  '>
+      <td><?php  echo $cot->getOutcomeType(); ?></td>
+ </tr>
+
+<?php  endforeach; ?>
+  </tr>
+</tbody>
+</table>
+</td>
+</td><td>&nbsp;&nbsp;&nbsp;
+</td>
+<td valign='top'>
+<h1>Collaboration Types</h1>
+<table class='list'>
+<thead>
+<tr>
+  <th colspan=0>Type</th>
+</tr>
+</thead>
+<tbody>
+<?php $collaborationYears = $collaboration->getCollaborationTypes(); 
+      $row = 1 ; ?>
+<tr class='record <?php if (fmod(++$row, 2) ) : ?>even-record <?php endif;?>  '> 
+<?php $col=0; 
+  foreach ($collaborationYears as $ct ): 
+?>
+      <td><?php  echo $ct->getCollaborationType(); ?></td>
+<? if (!fmod(++$col, 5) ) : ?> </tr><tr class='record <?php if (fmod(++$row, 2) ) : ?>even-record <?php endif;?>  '>
+<?php endif;?>
+<?php  endforeach; ?>
+  </tr>
+</tbody>
+</table>
+</td>
+</tr><tr>
+
+<td valign='top'>
+
 <h1>Collaborating Organizations</h1>
 <table class='list'>
 <thead>
@@ -43,7 +93,7 @@
 </tbody>
 </table>
 </td><td>&nbsp;&nbsp;&nbsp;
-</td><td>
+</td><td align='left'>
 <h1>Collaboration Years</h1>
 <table class='list'>
 <thead>

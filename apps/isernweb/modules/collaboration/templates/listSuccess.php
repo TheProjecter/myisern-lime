@@ -8,7 +8,7 @@
 <thead>
 <tr>
   <th>Name</th>
-  <th>Description</th>
+  
   <th>&nbsp;</th>  
 </tr>
 </thead>
@@ -17,7 +17,6 @@
 foreach ($collaborations as $collaboration): ?>
 <tr class='record <?php if (fmod(++$i, 2) ) : ?>even-record <?php endif;?>'>
     <td><?php echo link_to($collaboration->getName(), 'collaboration/show?id='.$collaboration->getId()) ?></td>
-      <td><?php echo $collaboration->getDescription() ?></td>
       <td><?php echo link_to("edit",'collaboration/edit?id='.$collaboration->getId()) ?>&nbsp;
           <?php echo link_to("delete",'collaboration/delete?id='.$collaboration->getId(),
                                array('confirm' => 'Are you sure?')) ?></td>             
