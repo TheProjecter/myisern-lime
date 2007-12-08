@@ -5,11 +5,11 @@
 <?php
 
 /**
- * collaboration actions.
+ * Collaboration actions for the collaborations form..
  *
  * @package    myisern-lime
  * @subpackage collaboration
- * @author     Your name here
+ * @author     Kevin W. English
  * @version    SVN: $Id: actions.class.php 3335 2007-01-23 16:19:56Z fabien $
  */
 class collaborationActions extends sfActions
@@ -45,7 +45,9 @@ class collaborationActions extends sfActions
     $this->prepareOrganizationOptions(); 
     $this->getCollaboratingOrganizationIds();
     $this->getCollaborationYears();
+    $this->logMessage("[kevin] executeEdit::collaborationYears size = " . sizeof($this->collaborationYears));
     $this->forward404Unless($this->collaboration);
+    $this->setTemplate('edit');    
   }
 
   public function executeUpdate()
@@ -64,27 +66,59 @@ class collaborationActions extends sfActions
     $collaboration->setName($this->getRequestParameter('name'));
     $collaboration->setDescription($this->getRequestParameter('description'));
     $collaboration->save();
-    foreach ($collaboration->getCollaboratingOrganizations() as $co) { 
+    foreach ($collaboration->getCollaboratingOrganizations() as $co) 
+    { 
       $co->delete();
     } 
 
-    foreach ($this->getRequestParameter('collaboratingOrganizations') as $orgId ) {
+    foreach ($this->getRequestParameter('collaboratingOrganizations') as $orgId ) 
+    {
        $collaboratingOranization = new CollaboratingOrganization();
        $collaboratingOranization->setCollaborationId($collaboration->getId());
        $collaboratingOranization->setOrganizationId($orgId);
        $collaboratingOranization->save();
        $this->logMessage("[kevin] orgid = $orgId ");    	
     }
-    foreach ($collaboration->getCollaborationYears() as $cy) {
+    foreach ($collaboration->getCollaborationYears() as $cy) 
+    {
       $cy->delete();
     }
-    foreach ($this->getRequestParameter('collaborationYears') as $year) { 
+    foreach ($this->getRequestParameter('collaborationYears') as $year)
+    { 
        $collaborationYear = new Collaborationyear();
        $collaborationYear->setCollaborationId($collaboration->getId());
        $collaborationYear->setYear($year); 
        $collaborationYear->save();
-    } 
-
+    }
+    foreach ($collaboration->getCollaborationTypes() as $row) 
+    {
+      $row->delete();
+    }    
+    foreach ($this->getRequestParameter('collaborationTypes') as $type) 
+    { 
+       if ($type) 
+       {
+         $collaborationType = new CollaborationType();
+         $collaborationType->setCollaborationId($collaboration->getId());
+         $collaborationType->setCollaborationType($type); 
+         $collaborationType->save();
+       }
+    }
+    foreach ($collaboration->getCollaborationOutcomeTypes() as $row) 
+    {
+      $row->delete();
+    }        
+    
+    foreach ($this->getRequestParameter('collaborationOutcomeTypes') as $type) 
+    {
+       if ($type) 
+       {
+         $collaborationOutcomeTypes = new CollaborationOutcomeType();
+         $collaborationOutcomeTypes->setCollaborationId($collaboration->getId());
+         $collaborationOutcomeTypes->setOutcomeType($type); 
+         $collaborationOutcomeTypes->save();
+      }
+    }             
     return $this->redirect('collaboration/show?id='.$collaboration->getId());
   }
 
@@ -107,6 +141,7 @@ class collaborationActions extends sfActions
    else {
      $this->forward('collaboration', 'edit');
    }
+//    $this->setTemplate('edit');   
   }
   public function prepareOrganizationOptions() {
     $organizations = OrganizationPeer::doSelect(new Criteria());
@@ -127,11 +162,12 @@ class collaborationActions extends sfActions
     $this->collaboratingOrganizationIds = $ids;
   }
   public function getCollaborationYears() {
-
+    $this->logMessage("[kevin] getCollaborationYears");    	
     $years=array();
     if ($this->collaboration && $this->collaboration->getCollaborationYears() ) {
       $years = array_map('collaborationActions::collaborationYear',$this->collaboration->getCollaborationYears());
     }
+    $this->logMessage("[kevin] collaborationYears size = " . sizeof($years));        
     $this->collaborationYears = $years;
   }
 

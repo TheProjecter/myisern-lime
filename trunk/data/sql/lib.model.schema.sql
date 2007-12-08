@@ -136,5 +136,62 @@ CREATE TABLE `isern_users`
 	PRIMARY KEY (`id`)
 )Type=MyISAM;
 
+#-----------------------------------------------------------------------------
+#-- isern_collaboration_outcome_types
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `isern_collaboration_outcome_types`;
+
+
+CREATE TABLE `isern_collaboration_outcome_types`
+(
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`collaboration_id` INTEGER,
+	`outcome_type` VARCHAR(50),
+	PRIMARY KEY (`id`),
+	INDEX `isern_collaboration_outcome_types_FI_1` (`collaboration_id`),
+	CONSTRAINT `isern_collaboration_outcome_types_FK_1`
+		FOREIGN KEY (`collaboration_id`)
+		REFERENCES `isern_collaborations` (`id`)
+)Type=MyISAM;
+
+#-----------------------------------------------------------------------------
+#-- isern_organization_researcher_keywords
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `isern_organization_researcher_keywords`;
+
+
+CREATE TABLE `isern_organization_researcher_keywords`
+(
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`organization_id` INTEGER,
+	`keyword` VARCHAR(50),
+	PRIMARY KEY (`id`),
+	INDEX `isern_organization_researcher_keywords_FI_1` (`organization_id`),
+	CONSTRAINT `isern_organization_researcher_keywords_FK_1`
+		FOREIGN KEY (`organization_id`)
+		REFERENCES `isern_organizations` (`id`)
+)Type=MyISAM;
+
+#-----------------------------------------------------------------------------
+#-- isern_collaboration_types
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `isern_collaboration_types`;
+
+
+CREATE TABLE `isern_collaboration_types`
+(
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`collaboration_id` INTEGER,
+	`collaboration_type` VARCHAR(50),
+	PRIMARY KEY (`id`),
+	INDEX `isern_collaboration_types_FI_1` (`collaboration_id`),
+	CONSTRAINT `isern_collaboration_types_FK_1`
+		FOREIGN KEY (`collaboration_id`)
+		REFERENCES `isern_collaborations` (`id`)
+)Type=MyISAM;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;

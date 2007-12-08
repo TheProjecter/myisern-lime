@@ -9,7 +9,7 @@
  *
  * @package    myisern-lime
  * @subpackage organization_type
- * @author     Your name here
+ * @author     Kevin English
  * @version    SVN: $Id: actions.class.php 3335 2007-01-23 16:19:56Z fabien $
  */
 class organization_typeActions extends sfActions

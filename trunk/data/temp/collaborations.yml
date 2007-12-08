@@ -1,0 +1,675 @@
+Collaboration:
+  c1:
+    name: UM-UH
+    description: |
+      A graduate student at the University of Hawaii spent the summer working in the University of Maryland research group.
+  c2:
+    name: JAMSS-UH
+OrganizationTypes:
+  ot1:
+    name: Industry
+  ot2:
+    name: Academia
+Organization:
+  o1:
+    name: National Research Council Canada
+    organization_type_id: ot1
+    country: Canada
+    home_page: http://iit-iti.nrc-cnrc.gc.ca/personnel/singer_janice_e.html
+    research_description: Main empirical research areas: empirical study design and methodology, workplace evaluation of tools/processes, research ethics, cognitive requirements of software engineering, collaborative software engineering, work practices of software engineers using modeling languages
+  o2:
+    name: Avaya Labs Research
+    organization_type_id: ot1
+    country: USA
+    home_page: http://www.research.avayalabs.com/gcm/usa/en-us/people/all/mockus.htm
+    research_description: Main empirical research areas: analysis of software change repositories, evaluating open source software process, distributed development and organizational interdependencies, prediction of software quality as perceived by end users
+  o3:
+    name: Carnegie Mellon University
+    organization_type_id: ot2
+    country: USA
+    home_page: http://www.sei.cmu.edu/staff/dz/
+    research_description: Management of the Software Engineering Measurement and Analysis initiative.
+  o4:
+    name: Stevens Institute of Technology
+    organization_type_id: ot2
+    country: USA
+    home_page: http://www.cs.stevens.edu/
+    research_description: My current research interest is in the field of Software Engineering, that is the software development process that must accompany technology expertise to produce reliable, secure software products.
+  o5:
+    name: University of Hawaii
+    organization_type_id: ot2
+    country: USA
+    home_page: http://csdl.ics.hawaii.edu
+    research_description: The Collaborative Software Development Laboratory does
+			research on software measurement.
+  o6:
+    name: University of Maryland
+    organization_type_id: ot2
+    country: USA
+    home_page: http://cs.umd.edu/
+    research_description: The University of Maryland software engineering group does
+			great stuff.
+  o7:
+    name: Blekinge Institute of Technology, Sweden
+    organization_type_id: ot2
+    country: Sweden
+    home_page: http://www.bth.se/eng/
+    research_description: applied IT and sustainable development
+  o8:
+    name: COPPE
+    organization_type_id: ot2
+    country: Brazil
+    home_page: http://www.bth.se/eng/
+    research_description: sciences and engineering
+  o9:
+    name: Fraunhofer Center - Maryland
+    organization_type_id: ot2
+    country: USA
+    home_page: http://fc-md.umd.edu/
+    research_description: 
+  o10:
+    name: Fraunhofer Institute for Experimental Software Engineering
+    organization_type_id: ot2
+    country: Germany
+    home_page: http://www.iese.fraunhofer.de/
+    research_description: 
+  o11:
+    name: Helsinki University of Technology Software Business	Laboratory
+    organization_type_id: ot2
+    country: Finland
+    home_page: http://www.sbl.tkk.fi/
+    research_description: 
+  o12:
+    name: Japan Manned Space Systems Corporation
+    organization_type_id: ot1
+    country: Japan
+    home_page: http://www.jamss.co.jp/ehtml/index.html
+    research_description: 
+  o13:
+    name: Japan Aerospace Exploration Agency
+    organization_type_id: ot1
+    country: Japan
+    home_page: http://www.jaxa.jp/index_e.html
+    research_description: 
+  o14:
+    name: Lucent Technologies - Bell Laboratories
+    organization_type_id: ot1
+    country: USA
+    home_page: http://www.alcatel-lucent.com/wps/portal/BellLabs
+    research_description: 
+  o15:
+    name: Lund University, Sweden
+    organization_type_id: ot2
+    country: Sweden
+    home_page: http://www.tts.lth.se/
+    research_description: 
+  o16:
+    name: Microsoft Research
+    organization_type_id: ot1
+    country: USA
+    home_page: http://research.microsoft.com/users/nachin/
+    research_description: 
+  o17:
+    name: Mississippi State University
+    organization_type_id: ot2
+    country: USA
+    home_page: http://www.cse.msstate.edu/
+    research_description: 
+  o18:
+    name: Nara Institute of Science and Technology
+    organization_type_id: ot2
+    country: Japan
+    home_page: http://isw3.aist-nara.ac.jp/home-en.html
+    research_description: 
+  o19:
+    name: North Carolina State University
+    organization_type_id: ot2
+    country: USA
+    home_page: http://www.ncsu.edu/
+    research_description: 
+  o20:
+    name: Northrop Grumman
+    organization_type_id: ot1
+    country: USA
+    home_page: http://www.northropgrumman.com/
+    research_description: 
+  o21:
+    name: NRC Institute for Information Technology
+    organization_type_id: ot2
+    country: Canada
+    home_page: http://iit-iti.nrc-cnrc.gc.ca/iit-personnel-iti/seg-ggl_e.html
+    research_description: 
+  o22:
+    name: Norwegian University of Science and Technology
+    organization_type_id: ot2
+    country: Norway
+    home_page: http://www.idt.unit.no/IDT/idt-eng.html
+    research_description: 
+  o23:
+    name: NTT Data Corporation
+    organization_type_id: ot1
+    country: Japan
+    home_page: http://www.nttdata.co.jp/index_e.html
+    research_description: 
+  o24:
+    name: Osaka University
+    organization_type_id: ot2
+    country: Japan
+    home_page: http://www.osaka-u.ac.jp/eng/
+    research_description: 
+  o25:
+    name: SINTEF Telecom and Informatics
+    organization_type_id: ot1
+    country: Norway
+    home_page: http://www.sintef.no/
+    research_description: 
+  o26:
+    name: Sun Microsystems Inc.
+    organization_type_id: ot1
+    country: USA
+    home_page: http://www.sun.com
+    research_description: 
+  o27:
+    name: University of Alberta
+    organization_type_id: ot2
+    country: Canada
+    home_page: http://www.ualberta.ca/
+    research_description: 
+  o28:
+    name: University of Bari, Italy
+    organization_type_id: ot2
+    country: Italy
+    home_page: http://seldi2.uniba.it:1025/
+    research_description: 
+  o29:
+    name: University of Castilla-La Mancha
+    organization_type_id: ot2
+    country: Spain
+    home_page: http://www.uclm.es/
+    research_description: 
+  o30:
+    name: University of Kaiserslautern
+    organization_type_id: ot2
+    country: Germany
+    home_page: http://www.uni-kl.de/
+    research_description: 
+  o31:
+    name: Universidad Politecnica Madrid
+    organization_type_id: ot2
+    country: Spain
+    home_page: http://www.upm.es/
+    research_description: 
+  o32:
+    name: University of Maryland, Baltimore
+    organization_type_id: ot2
+    country: USA
+    home_page: http://www.umbc.edu/
+    research_description: 
+  o33:
+    name: University of New South Wales
+    organization_type_id: ot2
+    country: Australia
+    home_page: http://www.unsw.edu.au/
+    research_description: 
+  o34:
+    name: University of Oslo
+    organization_type_id: ot2
+    country: Norway
+    home_page: http://www.uio.no/english/
+    research_description: 
+  o35:
+    name: University of Oulu
+    organization_type_id: ot2
+    country: Finland
+    home_page: http://www.tol.oulu.fi/english/
+    research_description: 
+  o36:
+    name: University of Rome
+    organization_type_id: ot2
+    country: Italy
+    home_page: http://www.disp.utovrm.it/
+    research_description: 
+  o37:
+    name: University of Sao Paulo - Campus of Sao Carlos
+    organization_type_id: ot2
+    country: Brazil
+    home_page: http://www.sc.usp.br/
+    research_description: 
+  o38:
+    name: University of Sheffield
+    organization_type_id: ot2
+    country: United Kingdom
+    home_page: http://www.dcs.shef.ac.uk/cgi-bin/makeperson?ajc
+    research_description: 
+  o39:
+    name: University of Southern California
+    organization_type_id: ot2
+    country: USA
+    home_page: http://www.usc.edu/
+    research_description: 
+  o40:
+    name: University of Strathclyde
+    organization_type_id: ot2
+    country: Scotland
+    home_page: http://local.cis.strath.ac.uk/index.html
+    research_description: 
+  o41:
+    name: University of Technology, Sydney
+    organization_type_id: ot2
+    country: Australia
+    home_page: http://www.uts.edu.au/
+    research_description: 
+  o42:
+    name: University Politechnico di Torino
+    organization_type_id: ot2
+    country: Italy
+    home_page: http://www.polito.it/
+    research_description: 
+  o43:
+    name: Polytechnic University of Valencia
+    organization_type_id: ot2
+    country: Spain
+    home_page: http://oomethod.dsic.upv.es/anonimo/index.aspx
+    research_description: 
+  o44:
+    name: Vienna University of Technology
+    organization_type_id: ot2
+    country: Austria
+    home_page: http://www.tuwien.ac.at/
+    research_description: 
+  o45:
+    name: VTT Technical Research Centre of Finland
+    organization_type_id: ot1
+    country: Finland
+    home_page: http://www.ele.vtt.fi/
+    research_description: 
+  o46:
+    name: Simula Research Laboratory
+    organization_type_id: ot1
+    country: Norway
+    home_page: http://www.simula.no/
+    research_description: research methods and apparatus for empirical studies, software process inprovement, software effort estimation, object-oriented analysis and design
+CollaboratingOrganization:
+  co1:
+    collaboration_id: c1
+    organization_id: o6
+  co2:
+    collaboration_id: c1
+    organization_id: o7
+  co3:
+    collaboration_id: c2
+    organization_id: o5
+  co4:
+    collaboration_id: c2
+    organization_id: o7
+CollaborationYear:
+  cy1:
+    collaboration_id: c1
+    year:2006
+  cy2:
+    collaboration_id: c1
+    year:2005
+  cy3:
+    collaboration_id: c2
+    year:2005
+  cy4:
+    collaboration_id: c2
+    year:2006
+  cy5:
+    collaboration_id: c2
+    year:2007
+Researcher:
+  r1:
+    name: Janice Singer
+    organization: National Research Council Canada
+    email: Janice.Singer@nrc-cnrc.gc.ca
+    picture_link: http://iit-iti.nrc-cnrc.gc.ca/images/people/singer_janice.gif
+    bio_statement: 
+  r2:
+    name: Audris Mockus
+    organization: Avaya Labs Research
+    email: audris@avaya.com
+    picture_link: 
+    bio_statement: 
+  r3:
+    name: David Klappholz
+    organization: Stevens Institute of Technology
+    email: d.klappholz@worldnet.att.net
+    picture_link: http://www.cs.stevens.edu/content_images/faculty/CS/David_Klappholz.jpg
+    bio_statement: 
+  r4:
+    name: David Zubrow
+    organization: Carnegie Mellon University
+    email: dz@sei.cmu.edu
+    picture_link: http://www.sei.cmu.edu/staff/dz/dz.gif
+    bio_statement: 
+  r5:
+    name: Philip Johnson
+    organization: University of Hawaii
+    email: johnson@hawaii.edu
+    picture_link: http://csdl.ics.hawaii.edu/~csdl/Pictures/PhilipJohnson.jpg
+    bio_statement: 
+  r6:
+    name: Victor Basili
+    organization: University of Maryland
+    email: basili@cs.umd.edu
+    picture_link: http://www.cs.umd.edu/~basili/Smiling%20Vic.JPG
+    bio_statement: 
+  r7:
+    name: Mike Barker
+    organization: Nara Institute of Science and Technology
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/barker_mike.png
+    bio_statement: 
+  r8:
+    name: Giovanni Cantone
+    organization: University of Rome
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/cantone_giovanni.png
+    bio_statement: 
+  r9:
+    name: Marcus Ciolkowski
+    organization: University of Kaiserslautern
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/ciolkowski_marcus.png
+    bio_statement: 
+  r10:
+    name: Lorin Hochstein
+    organization: University of Maryland
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/hochstein_lorin.png
+    bio_statement: 
+  r11:
+    name: Ida Hogganvik
+    organization: SINTEF Telecom and Informatics
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/hogganivik_ida.png
+    bio_statement: 
+  r12:
+    name: Andreas Jedlitschka
+    organization: Fraunhofer Institute for Experimental Software Engineering
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/jedlitschka_andreas.png
+    bio_statement: 
+  r13:
+    name: Natalia Juristo
+    organization: Universidad Politecnica Madrid
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/juristo_natalia.png
+    bio_statement: 
+  r14:
+    name: Seija Komi-Sirvio
+    organization: VTT Technical Research Centre of Finland
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/komi-sirvio_seija.png
+    bio_statement: 
+  r15:
+    name: Shinji Kusumoto
+    organization: Osaka University
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/kusumoto_shinji.png
+    bio_statement: 
+  r16:
+    name: Markus M. Makela
+    organization: Helsinki University of Technology Software Business Laboratory
+    email: 
+    picture_link: 
+    bio_statement: 
+  r17:
+    name: Haruka Nakao
+    organization: Japan Manned Space Systems Corporation
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/nakao_haruka
+    bio_statement: 
+  r18:
+    name: Daniel Port
+    organization: University of Hawaii
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/port_daniel.png
+    bio_statement: 
+  r19:
+    name: Dieter Rombach
+    organization: University of Kaiserslautern
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/rombach_dieter.png
+    bio_statement: 
+  r20:
+    name: Laurie Williams
+    organization: North Carolina State University
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/williams_laurie.png
+    bio_statement: 
+  r21:
+    name: Bernard Wong
+    organization: University of Technology, Sydney
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/wong_bernard.png
+    bio_statement: 
+  r22:
+    name: Marvin V. Zelkowitz
+    organization: University of Maryland
+    email: 
+    picture_link: http://www.cs.umd.edu/~mvz/mvz-2006.jpg
+    bio_statement: 
+  r23:
+    name: Oscar Pastor
+    organization: Polytechnic University of Valencia
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/pastor_oscar.png
+    bio_statement: 
+  r24:
+    name: Kenichi Matsumoto
+    organization: Nara Institute of Science and Technology
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/mastumoto_kenichi.png
+    bio_statement: 
+  r25:
+    name: Martin Hoest
+    organization: Lund University, Sweden
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/hoest_martin.png
+    bio_statement: 
+  r26:
+    name: Lawrence G. Votta
+    organization: Sun Microsystems Inc.
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/votta_lawrence.png
+    bio_statement: 
+  r27:
+    name: Naoki Ishihama
+    organization: Japan Aerospace Exploration Agency
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/ishihama_naoki.png
+    bio_statement: 
+  r28:
+    name: Silvia Mara Abrahao
+    organization: Polytechnic University of Valencia
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/mara_abrahao_silvia.png
+    bio_statement: 
+  r29:
+    name: Odd Petter N. Slyngstad
+    organization: Norwegian University of Science and Technology
+    email: 
+    picture_link: 
+    bio_statement: 
+  r30:
+    name: Takeshi Hayama
+    organization: NTT Data Corporation
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/hayama_takeshi.png
+    bio_statement: 
+  r31:
+    name: Misa Fujinuki
+    organization: NTT DATA Corporation
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/fujinuki_misa.png
+    bio_statement: 
+  r32:
+    name: Giuseppe Visaggio
+    organization: University of Bari, Italy
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/visaggio_giuseppe.png
+    bio_statement: 
+  r33:
+    name: Claes Wohlin
+    organization: Blekinge Institute of Technology, Sweden
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/wohlin_claes.png
+    bio_statement: 
+  r34:
+    name: Ray Madachy
+    organization: University of Southern California
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/madachy_ray.png
+    bio_statement: 
+  r35:
+    name: Forrest Shull
+    organization: Fraunhofer Center - Maryland
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/shull_forrest.png
+    bio_statement: 
+  r36:
+    name: Pekka Abrahamsson
+    organization: VTT Technical Research Centre of Finland
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/abrahamsson_pekka.png
+    bio_statement: 
+  r37:
+    name: Jyrki Kontio
+    organization: Helsinki University of Technology Software Business	Laboratory
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/kontio_jyrki.png
+    bio_statement: 
+  r38:
+    name: Masafumi Katahira
+    organization: Japan Aerospace Exploration Agency
+    email: 
+    picture_link: 
+    bio_statement: 
+  r39:
+    name: Nachiappan Nagappan
+    organization: Microsoft Research
+    email: 
+    picture_link: 
+    bio_statement: 
+  r40:
+    name: Jeff Carver
+    organization: Mississippi State University
+    email: 
+    picture_link: 
+    bio_statement: 
+  r41:
+    name: Koji Torii
+    organization: Nara Institute of Science and Technology
+    email: 
+    picture_link: 
+    bio_statement: 
+  r42:
+    name: Richard W. Selby
+    organization: Northrop Grumman
+    email: 
+    picture_link: 
+    bio_statement: 
+  r43:
+    name: Hakan Erdogmus
+    organization: NRC Institute for Information Technology
+    email: 
+    picture_link: 
+    bio_statement: 
+  r44:
+    name: Reidar Conradi
+    organization: Norwegian University of Science and Technology
+    email: 
+    picture_link: 
+    bio_statement: 
+  r45:
+    name: Tore Dyba
+    organization: SINTEF Telecom and Informatics
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/dyba_tore.png
+    bio_statement: 
+  r46:
+    name: Larry Votta
+    organization: Sun Microsystems Inc.
+    email: 
+    picture_link: 
+    bio_statement: 
+  r47:
+    name: James Miller
+    organization: University of Alberta
+    email: 
+    picture_link: 
+    bio_statement: 
+  r48:
+    name: Marcela Genero
+    organization: University of Castilla-La Mancha
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/genero_bocco_marcela.png
+    bio_statement: 
+  r49:
+    name: Carolyn Seaman
+    organization: University of Maryland, Baltimore
+    email: 
+    picture_link: 
+    bio_statement: 
+  r50:
+    name: Dag Sjoberg
+    organization: University of Oslo
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/sjoberg_dag
+    bio_statement: 
+  r51:
+    name: Markku Oivo
+    organization: University of Oulu
+    email: 
+    picture_link: 
+    bio_statement: 
+  r52:
+    name: Jose Carlos Maldonado
+    organization: University of Sao Paulo - Campus of Sao Carlos
+    email: 
+    picture_link: 
+    bio_statement: 
+  r53:
+    name: Tony Cowling
+    organization: University of Sheffield
+    email: 
+    picture_link: 
+    bio_statement: 
+  r54:
+    name: Barry Boehm
+    organization: University of Southern California
+    email: 
+    picture_link: 
+    bio_statement: 
+  r55:
+    name: Murray Wood
+    organization: University of Strathclyde
+    email: 
+    picture_link: 
+    bio_statement: 
+  r56:
+    name: Maurizio Morisio
+    organization: University Politechnico di Torino
+    email: 
+    picture_link: 
+    bio_statement: 
+  r57:
+    name: Stefan Biffl
+    organization: Vienna University of Technology
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/biffl_stefan.png
+    bio_statement: 
+  r58:
+    name: Guilherme Horta Travassos
+    organization: COPPE
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/horta_travassos_guilherme.png
+    bio_statement: 
+  r59:
+    name: Ross Jeffery
+    organization: University of New South Wales
+    email: 
+    picture_link: http://myisern-1-purple-svn.googlegroups.com/web/jeffery_ross.png
+    bio_statement: 

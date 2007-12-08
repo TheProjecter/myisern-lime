@@ -33,28 +33,55 @@
 )) ?></td>
 </tr>
 <tr>
-  <th>Description:</th>
+  <th valign='top'>Description:</th>
   <td><?php echo object_textarea_tag($collaboration, 'getDescription', array (
   'size' => '30x3',
 )) ?></td>
 </tr>
 <tr>
-  <th>Organizations:</th>
+  <th  valign='top'>Organizations:</th>
   <td><?php echo select_tag('collaboratingOrganizations', options_for_select($options,$collaboratingOrganizationIds),array('multiple' => true)) ?></td>
 </tr>
-<?php echo "collaboration years = $collaborationYears"; ?>
 <tr>
-  <th>Years:</th>
+  <th valign='top'>Years:</th>
   <td>
 <?php  
    for ($year = 1990; $year < 2011; $year++) { ?>
-<?php echo checkbox_tag('collaborationYears[]', $year, in_array($year, $collaborationYears))  ?> <?php echo $year ?> 
+     	
+<?php echo checkbox_tag("collaborationYears[$year]", $year, in_array($year, $collaborationYears)  )  ?> <?php echo $year ?> 
      <? if (!( ($year+1)%5)) { ?> <br /> <? } ?>   
 <?php } ?> 
-</td>
-
+  </td>
 </tr>
-   
+<tr>
+  <th valign='top'>Outcome Types:</th>
+  <td>
+<?php  
+    $outcomeTypes = $collaboration->getCollaborationOutcomeTypes();
+   for ($i = 0; $i < 5; $i++) { 
+   	 $value = "";
+     if (array_key_exists($i, $outcomeTypes) ) { 
+       $value =   $outcomeTypes[$i]->getOutcomeType() ;
+     }
+     echo input_tag("collaborationOutcomeTypes[$i]", $value) . "<br />";   
+   } 
+?> 
+  </td>
+<tr>
+  <th valign='top'>Collaboration Types:</th>
+  <td>
+<?php  
+    $CollaborationTypes = $collaboration->getCollaborationTypes();
+   for ($i = 0; $i < 5; $i++) { 
+   	 $value = "";
+     if (array_key_exists($i, $CollaborationTypes) ) { 
+       $value =   $CollaborationTypes[$i]->getCollaborationType() ;
+     }
+     echo input_tag("collaborationTypes[$i]", $value) . "<br />";   
+   } 
+?> 
+  </td>  
+</tr>   
 
 
 </tbody>

@@ -1,6 +1,6 @@
 methods:
   post:           [name, collaboratingOrganizations, collaborationYears]
-  get:            [name, collaboratingOrganizations, collaborationYears]
+  get:            [name, collaboratingOrganizations, collaborationYears ]
 
 fillin:
   enabled:       on
@@ -15,7 +15,7 @@ names:
     validators:   [collaboratingOrganizationsValidator]
   collaborationYears:
     required:     Yes
-    required_msg: You must have at least once collaboration year
+    required_msg: You must have at least once collaboration year    
 collaboratingOrganizationsValidator:
     class:         myCollaboratingOrganizationsValidator
     param:
