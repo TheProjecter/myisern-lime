@@ -33,11 +33,7 @@ If you don't want to install the .deb package, you can install using pear. Follo
 
 = Installing Symfony on Windows =
 
-The [http://www.symfony-project.org/installation  Symfony Project Installation Page] has articles describing how to install Symfony on Windows. 
-
-A more detailed installation would begin with installing [http://www.wampserver.com/en/ WAMP] and then the directions for [http://trac.symfony-project.com/wiki/HowToInstallPearOnWindowsWithWamp How to install PEAR on windows with WAMP] and [http://trac.symfony-project.com/wiki/HowToInstallSymfonyOnWindowsWithWamp How to install Symfony on windows with WAMP]. The only difference may be that the php directory they describe will be found C:\wamp\bin\php\php5.2 if you are using the latest version of WAMP.
-
-Another route is to follow the instructions provided in the article [http://trac.symfony-project.com/wiki/BeginningSymfonyWithPear Beginning Symfony Project with XAMPP and Pear]. 
+The [http://www.symfony-project.org/installation  Symfony Project Installation Page] has articles describing how to install Symfony on Windows. Begin by installing [http://www.wampserver.com/en/ WAMP 2.0]. Next, follow the step-by-step directions for [http://trac.symfony-project.com/wiki/HowToInstallPearOnWindowsWithWamp How to install PEAR on windows with WAMP] and [http://trac.symfony-project.com/wiki/HowToInstallSymfonyOnWindowsWithWamp How to install Symfony on windows with WAMP]. The only difference will be that the php directory they describe will be has changed in WAMP 2.0. It can be found in C:\wamp\bin\php\php5.2 NOT C:\wamp\php. 
 
 = Installing Symfony on Mac =
 
