@@ -1,4 +1,5 @@
 #summary Installation Guide for Users of the MyIsern system on a Windows System.
+#labels Featured
 
 = Installing Myisern-lime on Windows XP =
 
