@@ -49,7 +49,7 @@
    for ($year = 1990; $year < 2011; $year++) { ?>
      	
 <?php echo checkbox_tag("collaborationYears[$year]", $year, in_array($year, $collaborationYears)  )  ?> <?php echo $year ?> 
-     <? if (!( ($year+1)%5)) { ?> <br /> <? } ?>   
+     <?php if (!( ($year+1)%5)) { ?> <br /> <? } ?>   
 <?php } ?> 
   </td>
 </tr>
