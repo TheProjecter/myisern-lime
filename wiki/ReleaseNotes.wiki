@@ -1,4 +1,5 @@
 #summary This summarizes the features available in the latest release
+#labels Featured
 = Release Notes =
 
 In this release you can:
