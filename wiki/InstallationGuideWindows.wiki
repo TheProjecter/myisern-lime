@@ -7,7 +7,7 @@ First, you must  [InstallSymfony install Symfony] on Windows using WAMP.
 Begin by downloading the the latest distribution file of the system from the [http://code.google.com/p/myisern-lime/downloads/list Downloads Page].
 
 === Install Notepad ++ ===
-To edit the configuration file, you will need an editor that understands Linux files. [http://notepad-plus.sourceforge.net/uk/site.htm Notepad++] is a very good option. If you open the files in regular notepad, windows will not undestand the new line characters.
+To edit the configuration file, you will need an editor that understands Linux files. [http://notepad-plus.sourceforge.net/uk/site.htm Notepad++] is a very good option. It is free and open source. If you open the files in regular notepad, windows will not undestand the new line characters.
 
 === Install MyIsern Lime in your web root ===
 
