@@ -33,7 +33,7 @@ class userActions extends sfActions
    }
    else
    {
-
+     return $this->redirect('researcher');
    }
   }  
   public function executeLogout()
