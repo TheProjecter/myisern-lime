@@ -1,6 +1,6 @@
 #summary Installation Guide for Users of the MyIsern system on a Windows System.
 
-= Installing Myisern-lime =
+= Installing Myisern-lime on Windows XP =
 
 First, you must  [InstallSymfony install Symfony] on Windows using WAMP.
 
