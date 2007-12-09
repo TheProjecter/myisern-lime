@@ -40,7 +40,7 @@ Flush Privileges;
 
 You have created the database but you still need to load the tables and the data. 
 
-Set your new password in `config/database.yml` 
+Set your new password in `config/database.yml` (lines 9,18,27)
 {{{
   password: password_change_me
 }}}
@@ -52,7 +52,7 @@ Set your new password in `config/propel.ini` (line 5,6):
 propel.database.createUrl  = mysql://isern:password_change_me@localhost/isern_production
 propel.database.url        =  mysql://isern:password_change_me@localhost/isern_production
 }}}
-to:
+
 === Loading the seed data === 
 
 Next you will run the symfony task to create the database and load the data. From the root directory of the installation (mysiser-lime), issue the following command:
