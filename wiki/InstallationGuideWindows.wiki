@@ -11,9 +11,7 @@ To edit the configuration file, you will need an editor that understands Linux f
 
 === Install MyIsern Lime in your web root ===
 
-To do this, simply unzip the distribution file into your WAMP webroot folder, if you followed the default installation, it will be C:\wamp\www.
-
-Later, we will show you how to setup virtual host and at that point you can move it out of you web tree.
+To do this, simply unzip the distribution file into your WAMP webroot folder. If you used the defaults when installing WAMP, it will be C:\wamp\www. We will assumed C:\wamp\www to be your default install directory in this install guide.
 
 === Setup the Database === 
 
