@@ -1,4 +1,4 @@
-#summary Installation Guide for Users of the MyIsern system.
+#summary Installation Guide for Users of the MyIsern system on Linux.
 #labels Featured
 
 = Installing Myisern-lime =
