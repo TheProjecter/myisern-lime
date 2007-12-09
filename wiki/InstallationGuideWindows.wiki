@@ -18,6 +18,7 @@ To do this, simply unzip the distribution file into your WAMP webroot folder. If
 
 Use the WAMP control to open the MySQL conole. Goto MySQL | MySQL Console. Your default root password for MySQL will be blank. You will need to create a database called 'isern_production' and create a user 'isern' that has all permissions on that database.
 
+[http://myisern-lime.googlecode.com/svn/wiki/wamp-screen.png]
 (Developers, see the  [DevelopersInstallationGuide Developer's Installation Guide].)
 
 Paste the following commands into the MySQL console. (Make sure to change the password.)
