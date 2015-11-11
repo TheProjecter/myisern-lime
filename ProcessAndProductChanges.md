@@ -1,0 +1,7 @@
+# Process and Product Changes #
+
+After spending many hours frustrated with Java in the previous projects, I took a different track for this one. I choose to use PHP, a language I have been familiar with since 2000. Initially, PHP was what some referred to ask Pretty Hack-up Perl. However, the user community has grown exponentially primarily because of it's low learning curve, it's ease of installation and ubiquity on Linux hosting enviornments.
+
+PHP 5 was released a few years ago and includes stronger object-oreiented features. Few were quick to capilize on this but one framework I noticed about year ago, Symfony,  was written entirely in PHP5. I choose to use symfony for my project so that I could compare PHP 5 framework to the Java Stripes framework and the Ruby on Rails framework. I discovered that while Symfony is much easier to install, use and extend than Java-based frameworks, it is not as flexible and powerful as Ruby on Rails.
+
+During my development process I had to teach myself PHP 5 unit testing (lime framework), php build system and symfony itself. This was quite challenging but I divided the work so that the latter portion of my project timeframe was devoted to testing, documentation and the build system.
